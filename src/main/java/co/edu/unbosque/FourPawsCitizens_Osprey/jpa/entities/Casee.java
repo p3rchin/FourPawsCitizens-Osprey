@@ -9,10 +9,10 @@ import javax.persistence.*;
 @Entity
 @Table(name = "Case") // Optional
 @NamedQueries({
-        @NamedQuery(name = "Case.findByName",
-                query = "SELECT a FROM Case a WHERE a.case_id = :case_id")
+        @NamedQuery(name = "Casee.findByName",
+                query = "SELECT a FROM Casee a WHERE a.case_id = :case_id")
 })
-public class Case {
+public class Casee {
     @Id
     @GeneratedValue
     @Column(name = "case_id")
@@ -34,7 +34,7 @@ public class Case {
     /**
      * Creating the default Constructor
      */
-    public Case() {
+    public Casee() {
     }
 
     /**
@@ -46,7 +46,7 @@ public class Case {
      * @param description are the qualities that has the case . description != null , description !=" "
      * @param pet         is the id that has the pet . pet_id != null , pet_id != " "
      */
-    public Case(Integer case_id, String created_at, String type, String description, Pet pet) {
+    public Casee(Integer case_id, String created_at, String type, String description, Pet pet) {
         this.case_id = case_id;
         this.created_at = created_at;
         this.type = type;

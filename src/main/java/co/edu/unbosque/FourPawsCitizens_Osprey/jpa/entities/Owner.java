@@ -19,6 +19,10 @@ public class Owner {
 
 
     @Id
+    @GeneratedValue
+    @Column(name = "owner_id")
+    private Integer ownerId;
+
     @OneToOne
     @JoinColumn(name = "username")
     private UserApp username;
@@ -44,8 +48,12 @@ public class Owner {
     public Owner() {
     }
 
+
+
+
     /**
      * Creating an specific constructor
+     * @param ownerId is the id of the owner, ownerId != null, ownerId !=" ".
      * @param username is the name that was created in the program. username != null, username !=" ".
      * @param personId is the id of the person. personId != null, personId!=" ".
      * @param name is the name of the owner. name != null, name !=" "
@@ -53,15 +61,22 @@ public class Owner {
      * @param neighborhood is the location where the owner live. neighborhood != null ,neighborhood != " "
      */
 
-    public Owner(UserApp username, Integer personId, String name, String address, String neighborhood) {
+    public Owner(Integer ownerId, UserApp username, Integer personId, String name, String address, String neighborhood) {
+        this.ownerId = ownerId;
         this.username = username;
         this.personId = personId;
         this.name = name;
         this.address = address;
         this.neighborhood = neighborhood;
-
     }
 
+    public Integer getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwnerId(Integer ownerId) {
+        this.ownerId = ownerId;
+    }
 
     public UserApp getUsername() {
         return username;

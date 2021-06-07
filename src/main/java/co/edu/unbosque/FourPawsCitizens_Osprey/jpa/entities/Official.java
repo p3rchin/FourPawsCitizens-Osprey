@@ -13,7 +13,12 @@ import javax.persistence.*;
 })
 public class Official {
 
+
     @Id
+    @GeneratedValue
+    @Column(name = "offcial_id", unique = true)
+    private Integer officialId;
+
     @OneToOne
     @JoinColumn(name = "username")
     private UserApp username;
@@ -25,12 +30,13 @@ public class Official {
 
     /**
      * Creating an specific constructor
+     * @param officialId is the id of the official,officialId!=null, officialId!=" "
      * @param username is the username of the user that was enter in the program. username != null, username !=" "
      * @param name is the name of the user. name!=null, name!=" "
      */
-
-    public Official(String username, String name) {
-
+    public Official(Integer officialId, UserApp username, String name) {
+        this.officialId = officialId;
+        this.username = username;
         this.name = name;
     }
 

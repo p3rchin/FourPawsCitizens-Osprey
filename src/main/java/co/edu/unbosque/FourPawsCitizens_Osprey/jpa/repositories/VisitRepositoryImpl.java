@@ -1,7 +1,5 @@
 package co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories;
 
-import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Case;
-import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Vet;
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Visit;
 
 import javax.persistence.EntityManager;

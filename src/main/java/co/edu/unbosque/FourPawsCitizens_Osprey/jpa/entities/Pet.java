@@ -45,7 +45,7 @@ public class Pet {
     private Owner owner;
 
     @OneToMany(mappedBy = "pet", cascade = CascadeType.ALL)
-    private List<Case> cases = new ArrayList<>();
+    private List<Casee> cases = new ArrayList<>();
 
     @OneToMany(mappedBy = "pet", cascade = CascadeType.ALL)
     private List<Visit> visits = new ArrayList<>();

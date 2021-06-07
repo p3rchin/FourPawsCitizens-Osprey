@@ -1,7 +1,6 @@
 package co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories;
 
-import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Case;
-import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Owner;
+import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Casee;
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -29,8 +28,8 @@ public class CaseRepositoryImpl implements CaseRepository {
      * @param id is the id number for the case. id!=null, id!=" "
      * @return the case
      */
-    public Optional<Case> findById(Integer id) {
-        Case Case = entityManager.find(Case.class, id);
+    public Optional<Casee> findById(Integer id) {
+        Casee Case = entityManager.find(Casee.class, id);
         return Case != null ? Optional.of(Case) : Optional.empty();
     }
 
@@ -38,8 +37,8 @@ public class CaseRepositoryImpl implements CaseRepository {
      * Creating method findAll
      * @return All the cases
      */
-    public List<Case> findAll() {
-        return entityManager.createQuery("from Case").getResultList();
+    public List<Casee> findAll() {
+        return entityManager.createQuery("from Casee").getResultList();
     }
 
 
@@ -48,7 +47,7 @@ public class CaseRepositoryImpl implements CaseRepository {
      * @param Case object of the case. Case!=null.
      * @return the case saved
      */
-    public Optional<Case> save(Case Case) {
+    public Optional<Casee> save(Casee Case) {
         try {
             entityManager.getTransaction().begin();
             entityManager.persist(Case);

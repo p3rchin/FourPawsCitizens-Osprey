@@ -6,7 +6,7 @@
     <persistence-unit name="OspreyDS" transaction-type="JTA">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <jta-data-source>java:/OspreyDS</jta-data-source>
-        <class>co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Case</class>
+        <class>co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Casee</class>
         <class>co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Official</class>
         <class>co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Owner</class>
         <class>co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Pet</class>
