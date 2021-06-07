@@ -34,7 +34,7 @@ public class Vet {
     @Column(name = "vet_id", unique = true)
     private Integer vetId;
 
-    @OneToMany(mappedBy = "vet", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "vet", cascade = CascadeType.ALL)
     private List<Visit> visits = new ArrayList<>();
 
     /**
@@ -48,7 +48,7 @@ public class Vet {
      *
      * @param username     is the username that was created by the program . username!= null, username!= " "
      * @param name         is the name for the vet. name != null, name !=" "
-     * @param address      is the location for the house. address!= null, address
+     * @param address      is the location for the house. address!= null, address!=" "
      * @param neighborhood where the vet is located. neighborhood != null ,neighborhood != " "
      */
 

@@ -44,10 +44,10 @@ public class Pet {
     @JoinColumn(name = "owner_id")
     private Owner owner;
 
-    @OneToMany(mappedBy = "pet", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "pet", cascade = CascadeType.ALL)
     private List<Case> cases = new ArrayList<>();
 
-    @OneToMany(mappedBy = "pet", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "pet", cascade = CascadeType.ALL)
     private List<Visit> visits = new ArrayList<>();
 
 
