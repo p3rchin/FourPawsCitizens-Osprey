@@ -30,6 +30,10 @@ public class Vet {
     @Column(name = "neighborhood")
     private String neighborhood;
 
+    @GeneratedValue
+    @Column(name = "vet_id", unique = true)
+    private Integer vetId;
+
     @OneToMany(mappedBy = "vet", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Visit> visits = new ArrayList<>();
 

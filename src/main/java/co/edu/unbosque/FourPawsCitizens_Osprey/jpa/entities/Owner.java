@@ -23,6 +23,7 @@ public class Owner {
     @JoinColumn(name = "username")
     private UserApp username;
 
+    @GeneratedValue
     @Column(name = "person_id", unique = true)
     private Integer personId;
 
