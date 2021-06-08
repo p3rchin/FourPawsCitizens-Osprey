@@ -7,12 +7,12 @@ import javax.persistence.*;
  * Creating Case with constructors and Getters and Setters
  */
 @Entity
-@Table(name = "Case") // Optional
+@Table(name = "PetCase") // Optional
 @NamedQueries({
         @NamedQuery(name = "Casee.findByName",
-                query = "SELECT a FROM Casee a WHERE a.case_id = :case_id")
+                query = "SELECT a FROM PetCase  a WHERE a.case_id = :case_id")
 })
-public class Casee {
+public class PetCase {
     @Id
     @GeneratedValue
     @Column(name = "case_id")
@@ -34,7 +34,7 @@ public class Casee {
     /**
      * Creating the default Constructor
      */
-    public Casee() {
+    public PetCase() {
     }
 
     /**
@@ -46,7 +46,7 @@ public class Casee {
      * @param description are the qualities that has the case . description != null , description !=" "
      * @param pet         is the id that has the pet . pet_id != null , pet_id != " "
      */
-    public Casee(Integer case_id, String created_at, String type, String description, Pet pet) {
+    public PetCase(Integer case_id, String created_at, String type, String description, Pet pet) {
         this.case_id = case_id;
         this.created_at = created_at;
         this.type = type;
@@ -60,14 +60,6 @@ public class Casee {
 
     public void setCase_id(Integer case_id) {
         this.case_id = case_id;
-    }
-
-    public Pet getPet() {
-        return pet;
-    }
-
-    public void setPet(Pet pet) {
-        this.pet = pet;
     }
 
     public String getCreated_at() {
@@ -94,5 +86,11 @@ public class Casee {
         this.description = description;
     }
 
+    public Pet getPet() {
+        return pet;
+    }
 
+    public void setPet(Pet pet) {
+        this.pet = pet;
+    }
 }

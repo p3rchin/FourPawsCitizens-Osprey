@@ -1,6 +1,6 @@
 package co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories;
 
-import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Casee;
+import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.PetCase;
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.Optional;
 /**
  * Creating CaseRepositoryImpl with methods
  */
-public class CaseRepositoryImpl implements CaseRepository {
+public class PetCaseRepositoryImpl implements CaseRepository {
 
 
     private EntityManager entityManager;
@@ -19,7 +19,7 @@ public class CaseRepositoryImpl implements CaseRepository {
      * Creating the default constructor
      * @param entityManager it manage the database entities. entityManager!=null
      */
-    public CaseRepositoryImpl(EntityManager entityManager) {
+    public PetCaseRepositoryImpl(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 
@@ -28,8 +28,8 @@ public class CaseRepositoryImpl implements CaseRepository {
      * @param id is the id number for the case. id!=null, id!=" "
      * @return the case
      */
-    public Optional<Casee> findById(Integer id) {
-        Casee Case = entityManager.find(Casee.class, id);
+    public Optional<PetCase> findById(Integer id) {
+        PetCase Case = entityManager.find(PetCase.class, id);
         return Case != null ? Optional.of(Case) : Optional.empty();
     }
 
@@ -37,8 +37,8 @@ public class CaseRepositoryImpl implements CaseRepository {
      * Creating method findAll
      * @return All the cases
      */
-    public List<Casee> findAll() {
-        return entityManager.createQuery("from Casee").getResultList();
+    public List<PetCase> findAll() {
+        return entityManager.createQuery("from PetCase").getResultList();
     }
 
 
@@ -47,7 +47,7 @@ public class CaseRepositoryImpl implements CaseRepository {
      * @param Case object of the case. Case!=null.
      * @return the case saved
      */
-    public Optional<Casee> save(Casee Case) {
+    public Optional<PetCase> save(PetCase Case) {
         try {
             entityManager.getTransaction().begin();
             entityManager.persist(Case);
