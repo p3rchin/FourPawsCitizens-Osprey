@@ -18,6 +18,13 @@ public interface UserAppRepository {
     Optional<UserApp> fyndByUsername(String Username);
 
     /**
+     * Creating method fyndByUsername2
+     * @param Username is the username for the UserApp. Username!=null, Username!=" "
+     * @return the UserApp
+     */
+    UserApp fyndByUsername2(String Username);
+
+    /**
      * Creating method findAll
      * @return All the UserApps
      */

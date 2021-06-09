@@ -48,9 +48,6 @@ public class Owner {
     public Owner() {
     }
 
-
-
-
     /**
      * Creating an specific constructor
      * @param ownerId is the id of the owner, ownerId != null, ownerId !=" ".
@@ -69,6 +66,22 @@ public class Owner {
         this.address = address;
         this.neighborhood = neighborhood;
     }
+
+    /**
+     * Creating an specific constructor
+     * @param personId is the id of the person. personId != null, personId!=" ".
+     * @param name is the name of the owner. name != null, name !=" "
+     * @param address is the location for the house. address!= null, address
+     * @param neighborhood is the location where the owner live. neighborhood != null ,neighborhood != " "
+     */
+
+    public Owner(Integer personId, String name, String address, String neighborhood) {
+        this.personId = personId;
+        this.name = name;
+        this.address = address;
+        this.neighborhood = neighborhood;
+    }
+
 
     public Integer getOwnerId() {
         return ownerId;
@@ -124,6 +137,11 @@ public class Owner {
 
     public void setNeighborhood(String neighborhood) {
         this.neighborhood = neighborhood;
+    }
+
+    public void addPet(Pet pet) {
+        pets.add(pet);
+        pet.setOwner(this);
     }
 
 }

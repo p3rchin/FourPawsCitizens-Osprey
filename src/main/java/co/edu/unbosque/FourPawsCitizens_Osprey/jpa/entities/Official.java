@@ -13,7 +13,6 @@ import javax.persistence.*;
 })
 public class Official {
 
-
     @Id
     @GeneratedValue
     @Column(name = "offcial_id", unique = true)
@@ -26,8 +25,6 @@ public class Official {
     @Column(name = "name")
     private String name;
 
-
-
     /**
      * Creating an specific constructor
      * @param officialId is the id of the official,officialId!=null, officialId!=" "
@@ -37,6 +34,14 @@ public class Official {
     public Official(Integer officialId, UserApp username, String name) {
         this.officialId = officialId;
         this.username = username;
+        this.name = name;
+    }
+
+    /**
+     * Creating an specific constructor
+     * @param name is the name of the user. name!=null, name!=" "
+     */
+    public Official(String name) {
         this.name = name;
     }
 
@@ -61,5 +66,13 @@ public class Official {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Integer getOfficialId() {
+        return officialId;
+    }
+
+    public void setOfficialId(Integer officialId) {
+        this.officialId = officialId;
     }
 }

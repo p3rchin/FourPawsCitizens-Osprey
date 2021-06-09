@@ -83,6 +83,27 @@ public class Pet {
 
     }
 
+    /**
+     * Creating an specific constructor
+     *
+     * @param microchip  is the identification that we put in the pet.
+     * @param name       is the reference for the pet
+     * @param species    is the specie of the pet. species !=null, species !=" "
+     * @param race       is the race of the pet. race !=null , race != " "
+     * @param size       is the size of the pet. size!=null, size!=" "
+     * @param sex        is the sex od the pet . sex!=null, sex!= " "
+     * @param picture    is the image for the pet.
+     */
+    public Pet(String microchip, String name, String species, String race, String size, String sex, String picture) {
+        this.microchip = microchip;
+        this.name = name;
+        this.species = species;
+        this.race = race;
+        this.size = size;
+        this.sex = sex;
+        this.picture = picture;
+    }
+
 
     public String getMicrochip() {
         return microchip;
@@ -152,5 +173,7 @@ public class Pet {
         this.owner = owner;
     }
 
-
+    public Integer getPetId() {
+        return petId;
+    }
 }
