@@ -69,13 +69,12 @@ public class Owner {
 
     /**
      * Creating an specific constructor
-     * @param personId is the id of the person. personId != null, personId!=" ".
      * @param name is the name of the owner. name != null, name !=" "
      * @param address is the location for the house. address!= null, address
      * @param neighborhood is the location where the owner live. neighborhood != null ,neighborhood != " "
      */
 
-    public Owner(Integer personId, String name, String address, String neighborhood) {
+    public Owner(String name, String address, String neighborhood) {
         this.personId = personId;
         this.name = name;
         this.address = address;

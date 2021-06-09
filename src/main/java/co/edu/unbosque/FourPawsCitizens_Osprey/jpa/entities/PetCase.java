@@ -54,6 +54,21 @@ public class PetCase {
         this.pet = pet;
     }
 
+    /**
+     * Creating the specific Constructor
+     *
+     * @param created_at  is the date that was created the case. created_at!= null, created_at !=" "
+     * @param type        is the "type" of the case. type!= null, type !=" "
+     * @param description are the qualities that has the case . description != null , description !=" "
+     */
+    public PetCase(String created_at, String type, String description) {
+        this.case_id = case_id;
+        this.created_at = created_at;
+        this.type = type;
+        this.description = description;
+        this.pet = pet;
+    }
+
     public Integer getCase_id() {
         return case_id;
     }

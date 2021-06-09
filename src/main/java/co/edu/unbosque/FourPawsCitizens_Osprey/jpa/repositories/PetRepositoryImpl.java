@@ -28,7 +28,9 @@ public class PetRepositoryImpl implements PetRepository {
      * @param Id is the id number for the Pet. Id!=null, Id!=" "
      * @return the Pet
      */
-    public Optional<Pet> fyndById(String Id) {
+
+
+    public Optional<Pet> fyndById(Integer Id) {
         Pet pet = entityManager.find(Pet.class, Id);
         return pet != null ? Optional.of(pet) : Optional.empty();
     }

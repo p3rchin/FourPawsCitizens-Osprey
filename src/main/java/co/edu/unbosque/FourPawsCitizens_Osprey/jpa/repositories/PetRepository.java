@@ -16,7 +16,7 @@ public interface PetRepository {
      * @param Id is the id number for the Pet. Id!=null, Id!=" "
      * @return the Pet
      */
-    Optional<Pet> fyndById(String Id);
+    Optional<Pet> fyndById(Integer Id);
 
     /**
      * Creating method findAll

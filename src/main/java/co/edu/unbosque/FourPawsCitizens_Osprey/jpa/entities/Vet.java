@@ -45,8 +45,6 @@ public class Vet {
     public Vet() {
     }
 
-
-
     /**
      * Creating an specific constructor
      *
@@ -64,7 +62,18 @@ public class Vet {
         this.neighborhood = neighborhood;
     }
 
-
+    /**
+     * Creating an specific constructor
+     *
+     * @param name         is the name for the vet. name != null, name !=" "
+     * @param address      is the location for the house. address!= null, address!=" "
+     * @param neighborhood where the vet is located. neighborhood != null ,neighborhood != " "
+     */
+    public Vet(String name, String address, String neighborhood) {
+        this.name = name;
+        this.address = address;
+        this.neighborhood = neighborhood;
+    }
 
     public UserApp getUsername() {
         return username;
@@ -96,5 +105,18 @@ public class Vet {
 
     public void setNeighborhood(String neighborhood) {
         this.neighborhood = neighborhood;
+    }
+
+    public Integer getVetId() {
+        return vetId;
+    }
+
+    public void setVetId(Integer vetId) {
+        this.vetId = vetId;
+    }
+
+    public void addVisit(Visit visit) {
+        visits.add(visit);
+        visit.setVet(this);
     }
 }

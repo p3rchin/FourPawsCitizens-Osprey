@@ -62,6 +62,22 @@ public class Visit {
         this.pet = pet;
     }
 
+    /**
+     * Creating an specific constructor
+     *
+     * @param created_at  the date that was created the visit. created_at !=null, created_at visit_id!=" "
+     * @param type        is the type of the visit. type!=null , type visit_id!=" "
+     * @param description the qualities that has the visit . description!=null, description visit_id!=" "
+     */
+    public Visit(String created_at, String type, String description) {
+        this.visit_id = visit_id;
+        this.created_at = created_at;
+        this.type = type;
+        this.description = description;
+        this.vet = vet;
+        this.pet = pet;
+    }
+
 
     public int getVisit_id() {
         return visit_id;

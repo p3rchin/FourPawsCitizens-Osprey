@@ -43,19 +43,31 @@ public class OwnerService {
         return ownersPOJO;
     }
 
-    public Owner saveOwner(Integer personId, String name, String adrress, String neightborhood) {
+    public Owner saveOwner(String name, String adrress, String neightborhood) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         ownerRepository = new OwnerRepositoryImpl(entityManager);
 
-        Owner owner = new Owner(personId, name, adrress, neightborhood);
+        Owner owner = new Owner(name, adrress, neightborhood);
         Owner persistedOwner = ownerRepository.save(owner).get();
 
         entityManager.close();
         entityManagerFactory.close();
 
         return persistedOwner;
+    }
+
+    public void updateAuthor(Owner owner) {
+
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        ownerRepository = new OwnerRepositoryImpl(entityManager);
+        ownerRepository.updateByUsername(owner.getName(), owner.getAddress(), owner.getNeighborhood(), owner.getUsername().getUsername());
+
+        entityManager.close();
+        entityManagerFactory.close();
 
     }
 

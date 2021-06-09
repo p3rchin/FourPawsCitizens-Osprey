@@ -176,4 +176,9 @@ public class Pet {
     public Integer getPetId() {
         return petId;
     }
+
+    public void addPetCase(PetCase petCase) {
+        cases.add(petCase);
+        petCase.setPet(this);
+    }
 }
