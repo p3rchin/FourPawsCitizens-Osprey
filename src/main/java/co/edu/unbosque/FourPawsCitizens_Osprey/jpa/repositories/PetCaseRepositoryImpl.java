@@ -9,7 +9,7 @@ import java.util.Optional;
 /**
  * Creating CaseRepositoryImpl with methods
  */
-public class PetCaseRepositoryImpl implements CaseRepository {
+public class PetCaseRepositoryImpl implements PetCaseRepository {
 
 
     private EntityManager entityManager;

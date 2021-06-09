@@ -5,10 +5,11 @@ import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.PetCase;
 import java.util.List;
 import java.util.Optional;
 
+
 /**
- * Creating CaseRepository interface with methods
+ * Creating PetCaseRepository interface with methods
  */
-public interface CaseRepository {
+public interface PetCaseRepository {
 
     /**
      * Creating method findById
@@ -31,3 +32,4 @@ public interface CaseRepository {
     Optional<PetCase> save(PetCase Case);
 
 }
+
