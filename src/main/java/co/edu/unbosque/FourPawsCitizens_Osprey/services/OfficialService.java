@@ -2,9 +2,8 @@ package co.edu.unbosque.FourPawsCitizens_Osprey.services;
 
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Official;
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Owner;
-import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.OfficialRepository;
-import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.OfficialRepositoryImpl;
-import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.OwnerRepositoryImpl;
+import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.UserApp;
+import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.*;
 import co.edu.unbosque.FourPawsCitizens_Osprey.resources.pojos.OfficialPOJO;
 
 import javax.ejb.Stateless;
@@ -13,11 +12,13 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Stateless
 public class OfficialService {
 
     OfficialRepository officialRepository;
+    UserAppRepository userAppRepository;
 
     public List<OfficialPOJO> listOfficial() {
 
@@ -42,19 +43,26 @@ public class OfficialService {
         return officialsPOJO;
     }
 
-    public Official saveOfficial(String name) {
+    public void saveOfficial(Official official,String username) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        userAppRepository = new UserAppRepositoryImpl(entityManager);
         officialRepository = new OfficialRepositoryImpl(entityManager);
 
-        Official official = new Official(name);
-        Official persistedOfficial = officialRepository.save(official).get();
+
+
+        Optional<UserApp> userApp = userAppRepository.findByUsername(username);
+        userApp.ifPresent(a -> {
+            a.addOfficial(new Official(official.getOfficialId(),official.getUsername(), official.getName()));
+            userAppRepository.save(a);
+        });
 
         entityManager.close();
         entityManagerFactory.close();
 
-        return persistedOfficial;
+        return;
     }
 
 }

@@ -1,8 +1,11 @@
 package co.edu.unbosque.FourPawsCitizens_Osprey.services;
 
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Owner;
+import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.UserApp;
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.OwnerRepository;
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.OwnerRepositoryImpl;
+import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.UserAppRepository;
+import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.UserAppRepositoryImpl;
 import co.edu.unbosque.FourPawsCitizens_Osprey.resources.pojos.OwnerPOJO;
 
 import javax.ejb.Stateless;
@@ -11,11 +14,13 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Stateless
 public class OwnerService {
-
+    UserAppRepository userAppRepository;
     OwnerRepository ownerRepository;
+
 
     public List<OwnerPOJO> listOwners() {
 
@@ -43,22 +48,28 @@ public class OwnerService {
         return ownersPOJO;
     }
 
-    public Owner saveOwner(String name, String adrress, String neightborhood) {
+    public Optional<Owner> saveOwner(Owner owner, String username) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
-        ownerRepository = new OwnerRepositoryImpl(entityManager);
 
-        Owner owner = new Owner(name, adrress, neightborhood);
-        Owner persistedOwner = ownerRepository.save(owner).get();
+        ownerRepository = new OwnerRepositoryImpl(entityManager);
+        userAppRepository = new UserAppRepositoryImpl(entityManager);
+
+        Optional<UserApp> userApp = userAppRepository.findByUsername(username);
+        userApp.ifPresent(a -> {
+            a.addOwner(new Owner(owner.getOwnerId(), owner.getUsername(), owner.getPersonId(), owner.getName(), owner.getAddress(), owner.getNeighborhood()));
+            userAppRepository.save(a);
+        });
+
 
         entityManager.close();
         entityManagerFactory.close();
 
-        return persistedOwner;
+        return Optional.of(owner);
     }
 
-    public void updateAuthor(Owner owner) {
+    public void updateOwner(Owner owner) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
         EntityManager entityManager = entityManagerFactory.createEntityManager();

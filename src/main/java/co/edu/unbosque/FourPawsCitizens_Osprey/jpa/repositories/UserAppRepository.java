@@ -15,7 +15,7 @@ public interface UserAppRepository {
      * @param Username is the username for the UserApp. Username!=null, Username!=" "
      * @return the UserApp
      */
-    Optional<UserApp> fyndByUsername(String Username);
+    Optional<UserApp> findByUsername(String Username);
 
     /**
      * Creating method fyndByUsername2

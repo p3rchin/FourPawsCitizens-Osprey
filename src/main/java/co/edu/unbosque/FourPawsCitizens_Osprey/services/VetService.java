@@ -1,6 +1,10 @@
 package co.edu.unbosque.FourPawsCitizens_Osprey.services;
 
+import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Official;
+import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.UserApp;
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Vet;
+import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.UserAppRepository;
+import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.UserAppRepositoryImpl;
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.VetRepository;
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.VetRepositoryImpl;
 import co.edu.unbosque.FourPawsCitizens_Osprey.resources.pojos.VetPOJO;
@@ -11,10 +15,12 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Stateless
 public class VetService {
 
+    UserAppRepository userAppRepository;
     VetRepository vetRepository;
 
     public List<VetPOJO> listVets() {
@@ -42,19 +48,24 @@ public class VetService {
         return vetsPOJO;
     }
 
-    public Vet saveVets(String name, String adrress, String neightborhood) {
+    public void saveVets(Vet vet,String username) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        userAppRepository = new UserAppRepositoryImpl(entityManager);
         vetRepository = new VetRepositoryImpl(entityManager);
 
-        Vet vet = new Vet(name, adrress, neightborhood);
-        Vet persistedVet = vetRepository.save(vet).get();
+        Optional<UserApp> userApp = userAppRepository.findByUsername(username);
+        userApp.ifPresent(a -> {
+            a.addVet(new Vet(vet.getVetId(), vet.getUsername(), vet.getName(), vet.getAddress(), vet.getNeighborhood()));
+            userAppRepository.save(a);
+        });
 
         entityManager.close();
         entityManagerFactory.close();
 
-        return persistedVet;
+        return;
     }
 
     public void updateVet(Vet vet) {
