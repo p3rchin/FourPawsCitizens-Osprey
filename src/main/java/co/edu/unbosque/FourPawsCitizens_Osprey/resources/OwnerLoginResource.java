@@ -11,9 +11,17 @@ import javax.ws.rs.core.Response;
 
 import java.util.Optional;
 
+/**
+ * Creating the resource of OwnerLoginResource with @Path,@Get and @Post notation
+ */
 @Path("/owners")
 public class OwnerLoginResource {
 
+    /**
+     * TThis operation of Restful obtain the owner logged
+     * @param role is the occupation of the user. role!=null, role!=" ".
+     * @return the owner logged.
+     */
     @Logged
     @GET
     @Produces(MediaType.TEXT_PLAIN)
@@ -30,6 +38,12 @@ public class OwnerLoginResource {
                 .build();
 
     }
+
+    /**
+     *  This operation of Restful create the owner user
+     * @param user is the object type of user  to login. user!=null
+     * @return the owner user created.
+     */
 
 
     @POST

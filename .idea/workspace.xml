@@ -10,37 +10,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33576cdb-f9f2-49a4-a657-bfa9e15e0b2f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OfficialLoginResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OfficialResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/PetCaseResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/PetResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/PetResourceTotal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/VetLoginResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/VetResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/VetsResourceTotal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/VisitResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Official.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Official.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Owner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/UserApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/UserApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Vet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Vet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Pet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OfficialLoginResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OfficialLoginResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OwnerLoginResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OwnerLoginResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/OfficialService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/OfficialService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/OwnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/OwnerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/UserAppService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/UserAppService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/VetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/VetService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Official.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Official.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Owner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Owner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Vet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Vet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/repositories/UserAppRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/repositories/UserAppRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/repositories/UserAppRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/repositories/UserAppRepositoryImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/FourPawsCitizens_Osprey/resources/PetResource.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/FourPawsCitizens_Osprey/services/OfficialService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/FourPawsCitizens_Osprey/services/OfficialService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/FourPawsCitizens_Osprey/services/OwnerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/FourPawsCitizens_Osprey/services/OwnerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/FourPawsCitizens_Osprey/services/UserAppService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/FourPawsCitizens_Osprey/services/UserAppService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/FourPawsCitizens_Osprey/services/VetService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/FourPawsCitizens_Osprey/services/VetService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Official.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Official.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Owner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Owner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Vet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Vet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/repositories/UserAppRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/repositories/UserAppRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/repositories/UserAppRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/repositories/UserAppRepositoryImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/unbosque/FourPawsCitizens_Osprey/resources/PetResource.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/unbosque/FourPawsCitizens_Osprey/services/OfficialService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/unbosque/FourPawsCitizens_Osprey/services/OfficialService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/unbosque/FourPawsCitizens_Osprey/services/OwnerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/unbosque/FourPawsCitizens_Osprey/services/OwnerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/unbosque/FourPawsCitizens_Osprey/services/UserAppService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/unbosque/FourPawsCitizens_Osprey/services/UserAppService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/unbosque/FourPawsCitizens_Osprey/services/VetService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/unbosque/FourPawsCitizens_Osprey/services/VetService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OwnerResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OwnerResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OwnersResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OwnersResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OwnersResourceTotal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OwnersResourceTotal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/PetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/PetService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/VisitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/VisitService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,13 +73,15 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -192,6 +180,7 @@
       <workItem from="1623206152104" duration="7443000" />
       <workItem from="1623268612938" duration="5785000" />
       <workItem from="1623275364721" duration="11672000" />
+      <workItem from="1623288771703" duration="6980000" />
     </task>
     <servers />
   </component>

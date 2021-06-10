@@ -10,21 +10,23 @@ import javax.ws.rs.core.Response;
 import java.util.Optional;
 
 /**
- * Creating the OfficialLoginResource with @Path, @Get and @Post notation
+ * Creating the VetLoginResource with @Path, @Get and @Post notation
  */
-@Path("/officials")
-public class OfficialLoginResource {
+@Path("/vets")
+public class VetLoginResource {
+
     /**
-     *  This operation of Restful obtain the official logged
+     * This operation of Restful obtain the vet logged
+     *
      * @param role is the occupation of the user. role!=null, role!=" ".
-     * @return the official logged.
+     * @return the vet logged.
      */
     @Logged
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public Response hello(@HeaderParam("role") String role) {
 
-        if (!"owner".equals(role))
+        if (!"vet".equals(role))
             return Response.status(Response.Status.FORBIDDEN)
                     .entity("Role " + role + " cannot access to this method")
                     .build();
@@ -36,16 +38,17 @@ public class OfficialLoginResource {
     }
 
     /**
-     *  This operation of Restful create the official user
+     * This operation of Restful create the pet user
+     *
      * @param user is the object type of user  to login. user!=null
-     * @return the official user created.
+     * @return the vet user created.
      */
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response create(UserAppPOJO user) {
-        user.setRole("official");
+        user.setRole("vet");
         Optional<UserAppPOJO> persistedUser = new UserAppService().createUser(user);
 
         if (persistedUser.isPresent()) {
@@ -54,7 +57,7 @@ public class OfficialLoginResource {
                     .build();
         } else {
             return Response.serverError()
-                    .entity("Official user could not be created")
+                    .entity("Vet user could not be created")
                     .build();
         }
     }

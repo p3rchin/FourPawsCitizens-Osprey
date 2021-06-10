@@ -6,7 +6,6 @@ import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.OwnerRepository;
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.OwnerRepositoryImpl;
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.PetRepository;
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.PetRepositoryImpl;
-import co.edu.unbosque.FourPawsCitizens_Osprey.resources.pojos.OwnerPOJO;
 import co.edu.unbosque.FourPawsCitizens_Osprey.resources.pojos.PetPOJO;
 
 import javax.ejb.Stateless;
@@ -52,7 +51,7 @@ public class PetService {
         return petsPOJO;
     }
 
-    public void savePet(String microchip, String name, String species, String raze, String size, String sex, String picture, String usernameOwner) {
+    public Optional<Pet> savePet(String username, Pet pet) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -60,14 +59,17 @@ public class PetService {
         ownerRepository = new OwnerRepositoryImpl(entityManager);
         petRepository = new PetRepositoryImpl(entityManager);
 
-        Optional<Owner> owner = ownerRepository.fyndByUsername(usernameOwner);
-        owner.ifPresent(a -> {
-            a.addPet(new Pet(microchip, name, species, raze, size, sex, picture));
-            ownerRepository.save(a);
-        });
+        Owner owner = ownerRepository.fyndByUsername(username).get();
+
+        Pet PetDb = new Pet(pet.getPetId(), pet.getMicrochip(), pet.getName(), pet.getSpecies(), pet.getRace(), pet.getSize(), pet.getSex(), pet.getPicture());
+        PetDb.setOwner(owner);
+        Optional<Pet> persistedPet = petRepository.save(PetDb);
 
         entityManager.close();
         entityManagerFactory.close();
-        return;
+
+
+        return persistedPet;
+
     }
 }

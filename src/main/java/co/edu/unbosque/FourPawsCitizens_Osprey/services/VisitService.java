@@ -45,7 +45,7 @@ public class VisitService {
         return visitsPOJO;
     }
 
-    public void saveVisit(String created_at, String type, String description, String usernameOwner) {
+    public void saveVisit(String username, Visit visit) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -53,9 +53,9 @@ public class VisitService {
         vetRepository = new VetRepositoryImpl(entityManager);
         visitRepository = new VisitRepositoryImpl(entityManager);
 
-        Optional<Vet> vet = vetRepository.fyndByUsername(usernameOwner);
+        Optional<Vet> vet = vetRepository.fyndByUsername(username);
         vet.ifPresent(a -> {
-            a.addVisit(new Visit(created_at, type, description));
+            a.addVisit(new Visit(visit.getVisit_id(), visit.getCreated_at(), visit.getType(), visit.getDescription(), visit.getVet(), visit.getPet()));
             vetRepository.save(a);
         });
 
