@@ -1,6 +1,5 @@
 package co.edu.unbosque.FourPawsCitizens_Osprey.services;
 
-import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Official;
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.UserApp;
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Vet;
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.UserAppRepository;
@@ -48,7 +47,7 @@ public class VetService {
         return vetsPOJO;
     }
 
-    public void saveVets(Vet vet,String username) {
+    public Optional<Vet> saveVets(Vet vet, String username) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -56,16 +55,16 @@ public class VetService {
         userAppRepository = new UserAppRepositoryImpl(entityManager);
         vetRepository = new VetRepositoryImpl(entityManager);
 
-        Optional<UserApp> userApp = userAppRepository.findByUsername(username);
-        userApp.ifPresent(a -> {
-            a.addVet(new Vet(vet.getVetId(), vet.getUsername(), vet.getName(), vet.getAddress(), vet.getNeighborhood()));
-            userAppRepository.save(a);
-        });
+
+        UserApp userApp = userAppRepository.findByUsername(username).get();
+        Vet vetDb = new Vet(vet.getVetId(), vet.getName(), vet.getAddress(), vet.getNeighborhood());
+        vetDb.setUsername(userApp);
+        Optional<Vet> persistedOwner = vetRepository.save(vetDb);
 
         entityManager.close();
         entityManagerFactory.close();
 
-        return;
+        return persistedOwner;
     }
 
     public void updateVet(Vet vet) {

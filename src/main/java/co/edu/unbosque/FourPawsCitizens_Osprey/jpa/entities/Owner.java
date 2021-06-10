@@ -42,6 +42,7 @@ public class Owner {
 
     @OneToMany(mappedBy = "owner", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Pet> pets = new ArrayList<>();
+
     /**
      * Creating default constructor
      */
@@ -50,11 +51,12 @@ public class Owner {
 
     /**
      * Creating an specific constructor
-     * @param ownerId is the id of the owner, ownerId != null, ownerId !=" ".
-     * @param username is the name that was created in the program. username != null, username !=" ".
-     * @param personId is the id of the person. personId != null, personId!=" ".
-     * @param name is the name of the owner. name != null, name !=" "
-     * @param address is the location for the house. address!= null, address
+     *
+     * @param ownerId      is the id of the owner, ownerId != null, ownerId !=" ".
+     * @param username     is the name that was created in the program. username != null, username !=" ".
+     * @param personId     is the id of the person. personId != null, personId!=" ".
+     * @param name         is the name of the owner. name != null, name !=" "
+     * @param address      is the location for the house. address!= null, address
      * @param neighborhood is the location where the owner live. neighborhood != null ,neighborhood != " "
      */
 
@@ -69,8 +71,27 @@ public class Owner {
 
     /**
      * Creating an specific constructor
-     * @param name is the name of the owner. name != null, name !=" "
-     * @param address is the location for the house. address!= null, address
+     * @param ownerId      is the id of the owner, ownerId != null, ownerId !=" ".
+     * @param personId     is the id of the person. personId != null, personId!=" ".
+     * @param name         is the name of the owner. name != null, name !=" "
+     * @param address      is the location for the house. address!= null, address
+     * @param neighborhood is the location where the owner live. neighborhood != null ,neighborhood != " "
+     */
+
+    public Owner(Integer ownerId, Integer personId, String name, String address, String neighborhood) {
+        this.ownerId = ownerId;
+
+        this.personId = personId;
+        this.name = name;
+        this.address = address;
+        this.neighborhood = neighborhood;
+    }
+
+    /**
+     * Creating an specific constructor
+     *
+     * @param name         is the name of the owner. name != null, name !=" "
+     * @param address      is the location for the house. address!= null, address
      * @param neighborhood is the location where the owner live. neighborhood != null ,neighborhood != " "
      */
 

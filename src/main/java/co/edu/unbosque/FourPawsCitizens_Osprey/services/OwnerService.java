@@ -56,17 +56,15 @@ public class OwnerService {
         ownerRepository = new OwnerRepositoryImpl(entityManager);
         userAppRepository = new UserAppRepositoryImpl(entityManager);
 
-        Optional<UserApp> userApp = userAppRepository.findByUsername(username);
-        userApp.ifPresent(a -> {
-            a.addOwner(new Owner(owner.getOwnerId(), owner.getUsername(), owner.getPersonId(), owner.getName(), owner.getAddress(), owner.getNeighborhood()));
-            userAppRepository.save(a);
-        });
-
+        UserApp userApp = userAppRepository.findByUsername(username).get();
+        Owner ownerDb = new Owner(owner.getOwnerId(), owner.getPersonId(), owner.getName(), owner.getAddress(), owner.getNeighborhood());
+        ownerDb.setUsername(userApp);
+        Optional<Owner> persistedOwner = ownerRepository.save(ownerDb);
 
         entityManager.close();
         entityManagerFactory.close();
 
-        return Optional.of(owner);
+        return persistedOwner;
     }
 
     public void updateOwner(Owner owner) {

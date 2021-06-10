@@ -80,7 +80,7 @@ public class UserAppService {
      */
     public Optional<String> validateUser(String username, String password ) {
 
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         // Getting credentials from the database
@@ -109,7 +109,7 @@ public class UserAppService {
      */
     public Optional<UserAppPOJO> createUser(UserAppPOJO user) {
 
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         userAppRepository = new UserAppRepositoryImpl(entityManager);

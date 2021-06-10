@@ -1,7 +1,6 @@
 package co.edu.unbosque.FourPawsCitizens_Osprey.services;
 
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Official;
-import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Owner;
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.UserApp;
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.*;
 import co.edu.unbosque.FourPawsCitizens_Osprey.resources.pojos.OfficialPOJO;
@@ -43,7 +42,7 @@ public class OfficialService {
         return officialsPOJO;
     }
 
-    public void saveOfficial(Official official,String username) {
+    public Optional<Official> saveOfficial(Official official, String username) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -51,18 +50,15 @@ public class OfficialService {
         userAppRepository = new UserAppRepositoryImpl(entityManager);
         officialRepository = new OfficialRepositoryImpl(entityManager);
 
-
-
-        Optional<UserApp> userApp = userAppRepository.findByUsername(username);
-        userApp.ifPresent(a -> {
-            a.addOfficial(new Official(official.getOfficialId(),official.getUsername(), official.getName()));
-            userAppRepository.save(a);
-        });
+        UserApp userApp = userAppRepository.findByUsername(username).get();
+        Official officialDb = new Official(official.getOfficialId(), official.getName());
+        officialDb.setUsername(userApp);
+        Optional<Official> persistedOwner = officialRepository.save(officialDb);
 
         entityManager.close();
         entityManagerFactory.close();
 
-        return;
+        return persistedOwner;
     }
 
 }

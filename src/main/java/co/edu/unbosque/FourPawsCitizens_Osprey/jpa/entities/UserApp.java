@@ -127,27 +127,5 @@ public class UserApp {
                 ", role='" + role + '\'' +
                 '}';
     }
-    public void addOfficial(Official official) {
-        this.official.setOfficialId(official.getOfficialId());
-        this.official.setName(official.getName());
-        official.setUsername(this);
 
-    }
-    public void addOwner(Owner owner) {
-        this.owner.setOwnerId(owner.getOwnerId());
-        this.owner.setName(owner.getName());
-        this.owner.setPersonId(owner.getPersonId());
-        this.owner.setAddress(owner.getAddress());
-        this.owner.setNeighborhood(owner.getNeighborhood());
-        owner.setUsername(this);
-
-    }
-    public void addVet(Vet vet) {
-        this.vet.setVetId(vet.getVetId());
-        this.vet.setName(vet.getName());
-        this.vet.setAddress(vet.getAddress());
-        this.vet.setNeighborhood(vet.getNeighborhood());
-        vet.setUsername(this);
-
-    }
 }

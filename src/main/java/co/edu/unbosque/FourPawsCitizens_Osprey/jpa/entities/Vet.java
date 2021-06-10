@@ -61,6 +61,20 @@ public class Vet {
         this.address = address;
         this.neighborhood = neighborhood;
     }
+    /**
+     * Creating an specific constructor
+     *
+     * @param vetId        is the id od the vet, vetId!= null, vetId!= " "
+     * @param name         is the name for the vet. name != null, name !=" "
+     * @param address      is the location for the house. address!= null, address!=" "
+     * @param neighborhood where the vet is located. neighborhood != null ,neighborhood != " "
+     */
+    public Vet(Integer vetId, String name, String address, String neighborhood) {
+        this.vetId = vetId;
+        this.name = name;
+        this.address = address;
+        this.neighborhood = neighborhood;
+    }
 
     /**
      * Creating an specific constructor

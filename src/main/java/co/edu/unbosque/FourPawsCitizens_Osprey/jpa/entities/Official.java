@@ -27,9 +27,10 @@ public class Official {
 
     /**
      * Creating an specific constructor
+     *
      * @param officialId is the id of the official,officialId!=null, officialId!=" "
-     * @param username is the username of the user that was enter in the program. username != null, username !=" "
-     * @param name is the name of the user. name!=null, name!=" "
+     * @param username   is the username of the user that was enter in the program. username != null, username !=" "
+     * @param name       is the name of the user. name!=null, name!=" "
      */
     public Official(Integer officialId, UserApp username, String name) {
         this.officialId = officialId;
@@ -39,6 +40,18 @@ public class Official {
 
     /**
      * Creating an specific constructor
+     *
+     * @param officialId is the id of the official,officialId!=null, officialId!=" "
+     * @param name       is the name of the user. name!=null, name!=" "
+     */
+    public Official(Integer officialId, String name) {
+        this.officialId = officialId;
+        this.name = name;
+    }
+
+    /**
+     * Creating an specific constructor
+     *
      * @param name is the name of the user. name!=null, name!=" "
      */
     public Official(String name) {

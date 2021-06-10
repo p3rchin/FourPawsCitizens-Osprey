@@ -2,16 +2,13 @@ package co.edu.unbosque.FourPawsCitizens_Osprey.resources;
 
 
 import co.edu.unbosque.FourPawsCitizens_Osprey.resources.filters.Logged;
-import co.edu.unbosque.FourPawsCitizens_Osprey.resources.pojos.OwnerPOJO;
-import co.edu.unbosque.FourPawsCitizens_Osprey.resources.pojos.PetPOJO;
 import co.edu.unbosque.FourPawsCitizens_Osprey.resources.pojos.UserAppPOJO;
 import co.edu.unbosque.FourPawsCitizens_Osprey.services.UserAppService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Optional;
 
 @Path("/owners")
@@ -40,8 +37,8 @@ public class OwnerLoginResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response create(UserAppPOJO user) {
         user.setRole("owner");
-
         Optional<UserAppPOJO> persistedUser = new UserAppService().createUser(user);
+
         if (persistedUser.isPresent()) {
             return Response.status(Response.Status.CREATED)
                     .entity(persistedUser.get())
