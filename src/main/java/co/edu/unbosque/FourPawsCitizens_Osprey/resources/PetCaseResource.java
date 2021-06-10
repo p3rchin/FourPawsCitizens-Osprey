@@ -11,22 +11,19 @@ import javax.ws.rs.core.Response;
 import java.util.Optional;
 
 
-@Path("/pets/{userName}/petCase")
+@Path("/pets/{pet_id}/petcases")
 public class PetCaseResource {
 
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response create(@PathParam("userName") String username, PetCase petCase) {
-        Optional<PetCase> persistedPetCase = new PetCaseService().savePetCase(username,petCase);
-        if (persistedPetCase.isPresent()) {
+    public Response create(@PathParam("pet_id") Integer petId, PetCase petCase) {
+        PetCaseService petCaseService = new PetCaseService();
+         petCaseService.savePetCase(petCase,petId);
+
             return Response.status(Response.Status.CREATED)
-                    .entity(persistedPetCase.get()).build();
-        } else {
-            return Response.serverError()
-                    .entity("Petcase could not be created")
-                    .build();
-        }
+                    .entity(petCase).build();
+
     }
 }

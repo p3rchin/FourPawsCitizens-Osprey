@@ -13,9 +13,8 @@ import java.util.Optional;
 public class OwnerRepositoryImpl implements OwnerRepository {
 
 
-
-
     private EntityManager entityManager;
+
     /**
      * Creating the default constructor
      *
@@ -25,14 +24,15 @@ public class OwnerRepositoryImpl implements OwnerRepository {
     public OwnerRepositoryImpl(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
+
     /**
      * Creating method fyndByUsername
      *
-     * @param Username is the username for the Owner. Username!=null, Username!=" "
+     * @param ownerId is the oid for the Owner. ownerId!=null, ownerId!=" "
      * @return the Owner
      */
-    public Optional<Owner> fyndByUsername(String Username) {
-        Owner owner = entityManager.find(Owner.class, Username);
+    public Optional<Owner> findById(Integer ownerId) {
+        Owner owner = entityManager.find(Owner.class, ownerId);
         return owner != null ? Optional.of(owner) : Optional.empty();
     }
 
@@ -41,12 +41,13 @@ public class OwnerRepositoryImpl implements OwnerRepository {
      *
      * @return All the owners
      */
-    public List<Owner> fyndAll() {
+    public List<Owner> findAll() {
         return entityManager.createQuery("from Owner").getResultList();
     }
 
     /**
      * Creating method save the Owner
+     *
      * @param owner object of the Owner. Owner!=null.
      * @return the Owner
      */
@@ -70,14 +71,16 @@ public class OwnerRepositoryImpl implements OwnerRepository {
      * @param address      is the addres of the owner. address!=null, address!=" "
      * @param neighborhood is the neighborhood. neighborhood!=null, neighborhood!=" "
      * @param Username     is the username of the owner. Username!=null, Username!=" "
+     * @param personId     is the number to identify a person, personId!=null, personId!=" "
      */
-    public void updateByUsername(String name, String address, String neighborhood, String Username) {
+    public void updateByUsername(String name, String address, String neighborhood, String Username, Integer personId) {
         Owner owner = entityManager.find(Owner.class, Username);
         if (owner != null) {
             try {
                 entityManager.getTransaction().begin();
                 owner.setName(name);
                 owner.setAddress(address);
+                owner.setPersonId(personId);
                 owner.setNeighborhood(neighborhood);
                 entityManager.merge(owner);
                 entityManager.getTransaction().commit();

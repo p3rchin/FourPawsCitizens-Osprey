@@ -26,11 +26,11 @@ public class VetRepositoryImpl implements VetRepository {
     /**
      * Creating method fyndByUsername
      *
-     * @param Username is the username for the Vet. Username!=null, Username!=" "
+     * @param vetId is the username for the Vet. Username!=null, Username!=" "
      * @return the Vet.
      */
-    public Optional<Vet> fyndByUsername(String Username) {
-        Vet vet = entityManager.find(Vet.class, Username);
+    public Optional<Vet> findById(Integer vetId) {
+        Vet vet = entityManager.find(Vet.class, vetId);
         return vet != null ? Optional.of(vet) : Optional.empty();
     }
 
@@ -39,7 +39,7 @@ public class VetRepositoryImpl implements VetRepository {
      *
      * @return All the Vets.
      */
-    public List<Vet> fyndAll() {
+    public List<Vet> findAll() {
         return entityManager.createQuery("from Vet").getResultList();
     }
 

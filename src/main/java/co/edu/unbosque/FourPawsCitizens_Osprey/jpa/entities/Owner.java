@@ -27,7 +27,6 @@ public class Owner {
     @JoinColumn(name = "username")
     private UserApp username;
 
-    @GeneratedValue
     @Column(name = "person_id", unique = true)
     private Integer personId;
 
@@ -80,7 +79,6 @@ public class Owner {
 
     public Owner(Integer ownerId, Integer personId, String name, String address, String neighborhood) {
         this.ownerId = ownerId;
-
         this.personId = personId;
         this.name = name;
         this.address = address;

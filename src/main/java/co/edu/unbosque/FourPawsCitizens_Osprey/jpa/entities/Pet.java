@@ -16,6 +16,7 @@ import java.util.List;
 
 public class Pet {
     @Id
+    @GeneratedValue
     @Column(name = "pet_id")
     private Integer petId;
 
@@ -60,15 +61,15 @@ public class Pet {
     /**
      * Creating an specific constructor
      *
-     * @param petId      is the id for the pet that we choose . petId !=null, petId !=" "
-     * @param microchip  is the identification that we put in the pet.
-     * @param name       is the reference for the pet
-     * @param species    is the specie of the pet. species !=null, species !=" "
-     * @param race       is the race of the pet. race !=null , race != " "
-     * @param size       is the size of the pet. size!=null, size!=" "
-     * @param sex        is the sex od the pet . sex!=null, sex!= " "
-     * @param picture    is the image for the pet.
-     * @param owner      is the id for the owner.
+     * @param petId     is the id for the pet that we choose . petId !=null, petId !=" "
+     * @param microchip is the identification that we put in the pet.
+     * @param name      is the reference for the pet
+     * @param species   is the specie of the pet. species !=null, species !=" "
+     * @param race      is the race of the pet. race !=null , race != " "
+     * @param size      is the size of the pet. size!=null, size!=" "
+     * @param sex       is the sex od the pet . sex!=null, sex!= " "
+     * @param picture   is the image for the pet.
+     * @param owner     is the id for the owner.
      */
     public Pet(Integer petId, String microchip, String name, String species, String race, String size, String sex, String picture, Owner owner) {
         this.petId = petId;
@@ -82,18 +83,18 @@ public class Pet {
         this.owner = owner;
 
     }
+
     /**
      * Creating an specific constructor
      *
-     * @param petId      is the id for the pet that we choose . petId !=null, petId !=" "
-     * @param microchip  is the identification that we put in the pet.
-     * @param name       is the reference for the pet
-     * @param species    is the specie of the pet. species !=null, species !=" "
-     * @param race       is the race of the pet. race !=null , race != " "
-     * @param size       is the size of the pet. size!=null, size!=" "
-     * @param sex        is the sex od the pet . sex!=null, sex!= " "
-     * @param picture    is the image for the pet.
-
+     * @param petId     is the id for the pet that we choose . petId !=null, petId !=" "
+     * @param microchip is the identification that we put in the pet.
+     * @param name      is the reference for the pet
+     * @param species   is the specie of the pet. species !=null, species !=" "
+     * @param race      is the race of the pet. race !=null , race != " "
+     * @param size      is the size of the pet. size!=null, size!=" "
+     * @param sex       is the sex od the pet . sex!=null, sex!= " "
+     * @param picture   is the image for the pet.
      */
     public Pet(Integer petId, String microchip, String name, String species, String race, String size, String sex, String picture) {
         this.petId = petId;
@@ -111,13 +112,13 @@ public class Pet {
     /**
      * Creating an specific constructor
      *
-     * @param microchip  is the identification that we put in the pet.
-     * @param name       is the reference for the pet
-     * @param species    is the specie of the pet. species !=null, species !=" "
-     * @param race       is the race of the pet. race !=null , race != " "
-     * @param size       is the size of the pet. size!=null, size!=" "
-     * @param sex        is the sex od the pet . sex!=null, sex!= " "
-     * @param picture    is the image for the pet.
+     * @param microchip is the identification that we put in the pet.
+     * @param name      is the reference for the pet
+     * @param species   is the specie of the pet. species !=null, species !=" "
+     * @param race      is the race of the pet. race !=null , race != " "
+     * @param size      is the size of the pet. size!=null, size!=" "
+     * @param sex       is the sex od the pet . sex!=null, sex!= " "
+     * @param picture   is the image for the pet.
      */
     public Pet(String microchip, String name, String species, String race, String size, String sex, String picture) {
         this.microchip = microchip;

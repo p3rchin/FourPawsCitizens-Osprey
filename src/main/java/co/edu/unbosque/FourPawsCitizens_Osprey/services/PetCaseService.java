@@ -44,7 +44,7 @@ public class PetCaseService {
         return petsCasePOJO;
     }
 
-    public void savePetCase(String created_at, String type, String description, Integer IdOwner) {
+    public void savePetCase(PetCase petCase, Integer petId) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -52,9 +52,12 @@ public class PetCaseService {
         petRepository = new PetRepositoryImpl(entityManager);
         petCaseRepository = new PetCaseRepositoryImpl(entityManager);
 
-        Optional<Pet> pet = petRepository.fyndById(IdOwner);
+        Optional<Pet> pet = petRepository.fyndById(petId);
+        Pet pet1 = pet.get();
         pet.ifPresent(a -> {
-            a.addPetCase(new PetCase(created_at, type, description));
+            PetCase petCasedb = new PetCase(petCase.getCase_id(), petCase.getCreated_at(), petCase.getType(), petCase.getDescription());
+            petCasedb.setPet(pet1);
+            a.addPetCase(petCasedb);
             petRepository.save(a);
         });
 

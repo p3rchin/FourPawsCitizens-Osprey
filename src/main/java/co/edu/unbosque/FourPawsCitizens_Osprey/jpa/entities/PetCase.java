@@ -53,6 +53,12 @@ public class PetCase {
         this.description = description;
         this.pet = pet;
     }
+    public PetCase(Integer case_id, String created_at, String type, String description) {
+        this.case_id = case_id;
+        this.created_at = created_at;
+        this.type = type;
+        this.description = description;
+    }
 
     /**
      * Creating the specific Constructor

@@ -10,22 +10,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33576cdb-f9f2-49a4-a657-bfa9e15e0b2f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OfficialResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/PetCaseResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/PetResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/PetResourceTotal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/VetLoginResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/VetResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/VetsResourceTotal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/VisitResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Owner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Pet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/PetCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/PetCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Visit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Visit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/repositories/OwnerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/repositories/OwnerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/repositories/OwnerRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/repositories/OwnerRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/repositories/VetRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/repositories/VetRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/repositories/VetRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/repositories/VetRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OfficialLoginResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OfficialLoginResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OwnerLoginResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OwnerLoginResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OwnerResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OwnerResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OwnersResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OwnersResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OwnersResourceTotal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OwnersResourceTotal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/PetCaseResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/PetCaseResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/PetResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/PetResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/VisitResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/VisitResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/OwnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/OwnerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/PetCaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/PetCaseService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/PetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/PetService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/VetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/VetService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/VisitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/VisitService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +46,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1tbAJpKyT0VnTMZJ6KQ07b71dhE" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -60,7 +69,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Workshop5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -73,22 +82,10 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JBoss/WildFly 23.0.1.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 23.0.1.Final" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT" />
-      <option name="UPDATING_POLICY" value="restart-server" />
+    <configuration name="JBoss 23.0.1.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 23.0.1.Final" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
         <artifact name="FourPawsCitizens-Osprey:war exploded">
           <settings />
@@ -104,7 +101,80 @@
       </server-settings>
       <predefined_log_file enabled="true" id="JBoss" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="55381" />
+        <option name="DEBUG_PORT" value="59005" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="FourPawsCitizens-Osprey:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="true" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 23.0.1.Final" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
+      <deployment>
+        <artifact name="FourPawsCitizens-Osprey:war exploded">
+          <settings />
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="SERVER" />
+        <option name="BINDING_SET_NAME" value="" />
+        <option name="DOMAIN" value="false" />
+        <option name="SERVER_GROUP" />
+        <option name="USERNAME" value="" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="JBoss" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="59005" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -181,6 +251,7 @@
       <workItem from="1623268612938" duration="5785000" />
       <workItem from="1623275364721" duration="11672000" />
       <workItem from="1623288771703" duration="6980000" />
+      <workItem from="1623354549524" duration="5988000" />
     </task>
     <servers />
   </component>

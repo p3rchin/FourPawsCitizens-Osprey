@@ -28,7 +28,7 @@ public class OwnerService {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         ownerRepository = new OwnerRepositoryImpl(entityManager);
-        List<Owner> owners = ownerRepository.fyndAll();
+        List<Owner> owners = ownerRepository.findAll();
 
         entityManager.close();
         entityManagerFactory.close();
@@ -73,7 +73,7 @@ public class OwnerService {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         ownerRepository = new OwnerRepositoryImpl(entityManager);
-        ownerRepository.updateByUsername(owner.getName(), owner.getAddress(), owner.getNeighborhood(), owner.getUsername().getUsername());
+        ownerRepository.updateByUsername(owner.getName(), owner.getAddress(), owner.getNeighborhood(), owner.getUsername().getUsername(), owner.getPersonId());
 
         entityManager.close();
         entityManagerFactory.close();

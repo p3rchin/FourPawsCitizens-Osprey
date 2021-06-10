@@ -24,7 +24,7 @@ public class OfficialLoginResource {
     @Produces(MediaType.TEXT_PLAIN)
     public Response hello(@HeaderParam("role") String role) {
 
-        if (!"owner".equals(role))
+        if (!"official".equals(role))
             return Response.status(Response.Status.FORBIDDEN)
                     .entity("Role " + role + " cannot access to this method")
                     .build();

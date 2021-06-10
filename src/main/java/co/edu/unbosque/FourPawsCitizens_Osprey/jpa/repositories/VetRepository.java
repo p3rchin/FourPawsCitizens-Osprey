@@ -15,17 +15,17 @@ public interface VetRepository {
     /**
      * Creating method fyndByUsername
      *
-     * @param Username is the username for the Vet. Username!=null, Username!=" "
+     * @param vetId is the username for the Vet. vetId!=null, vetId!=" "
      * @return the Vet.
      */
-    Optional<Vet> fyndByUsername(String Username);
+    Optional<Vet> findById(Integer vetId);
 
     /**
      * Creating method findAll
      *
      * @return All the Vets.
      */
-    List<Vet> fyndAll();
+    List<Vet> findAll();
 
     /**
      * Creating method to udpdate an Vet

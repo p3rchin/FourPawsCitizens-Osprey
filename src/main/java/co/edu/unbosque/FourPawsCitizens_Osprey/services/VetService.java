@@ -28,7 +28,7 @@ public class VetService {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         vetRepository = new VetRepositoryImpl(entityManager);
-        List<Vet> vets = vetRepository.fyndAll();
+        List<Vet> vets = vetRepository.findAll();
 
         entityManager.close();
         entityManagerFactory.close();

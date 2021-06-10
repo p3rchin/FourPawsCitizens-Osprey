@@ -2,6 +2,7 @@ package co.edu.unbosque.FourPawsCitizens_Osprey.services;
 
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Owner;
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Pet;
+import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.PetCase;
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.OwnerRepository;
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.OwnerRepositoryImpl;
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.PetRepository;
@@ -51,7 +52,7 @@ public class PetService {
         return petsPOJO;
     }
 
-    public Optional<Pet> savePet(String username, Pet pet) {
+    public void savePet(Integer ownerId, Pet pet) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -59,17 +60,21 @@ public class PetService {
         ownerRepository = new OwnerRepositoryImpl(entityManager);
         petRepository = new PetRepositoryImpl(entityManager);
 
-        Owner owner = ownerRepository.fyndByUsername(username).get();
+        Optional<Owner> owner = ownerRepository.findById(ownerId);
+        Owner owner1 = owner.get();
+        owner.ifPresent(a -> {
+            Pet petDb = new Pet(pet.getPetId(), pet.getMicrochip(), pet.getName(), pet.getSpecies(), pet.getRace(), pet.getSize(), pet.getSex(), pet.getPicture());
+            petDb.setOwner(owner1);
+            a.addPet(petDb);
+            ownerRepository.save(a);
+        });
 
-        Pet PetDb = new Pet(pet.getPetId(), pet.getMicrochip(), pet.getName(), pet.getSpecies(), pet.getRace(), pet.getSize(), pet.getSex(), pet.getPicture());
-        PetDb.setOwner(owner);
-        Optional<Pet> persistedPet = petRepository.save(PetDb);
 
         entityManager.close();
         entityManagerFactory.close();
 
 
-        return persistedPet;
+        return;
 
     }
 }
