@@ -13,12 +13,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Creating PetCaseService with methods
+ */
 @Stateless
 public class PetCaseService {
 
     PetCaseRepository petCaseRepository;
     PetRepository petRepository;
 
+    /**
+     * Creating method listPetsCase
+     *
+     * @return A list of Pojos of pet cases
+     */
     public List<PetCasePOJO> listPetsCase() {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
@@ -44,6 +52,13 @@ public class PetCaseService {
         return petsCasePOJO;
     }
 
+    /**
+     * Creating method savePetCase
+     *
+     * @param petCase is the case to threat the pet. petCase!=null
+     * @param petId is the id of the pet. petId!=null, petId!=" "
+     * @return an pet case
+     */
     public void savePetCase(PetCase petCase, Integer petId) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");

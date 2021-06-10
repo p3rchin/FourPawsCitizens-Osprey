@@ -5,6 +5,7 @@ import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.UserAppRepositor
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.UserAppRepositoryImpl;
 import co.edu.unbosque.FourPawsCitizens_Osprey.resources.pojos.UserAppPOJO;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -15,6 +16,7 @@ import java.util.Optional;
 /**
  * Creating the service for UserApp
  */
+@Stateless
 public class UserAppService {
 
     UserAppRepository userAppRepository;

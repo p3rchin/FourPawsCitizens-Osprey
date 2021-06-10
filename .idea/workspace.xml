@@ -11,21 +11,11 @@
   <component name="ChangeListManager">
     <list default="true" id="33576cdb-f9f2-49a4-a657-bfa9e15e0b2f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Owner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Pet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/PetCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/PetCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Visit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/entities/Visit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/repositories/OwnerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/repositories/OwnerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/repositories/OwnerRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/repositories/OwnerRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/repositories/VetRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/repositories/VetRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/repositories/VetRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/jpa/repositories/VetRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OfficialLoginResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OfficialLoginResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/PetCaseResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/PetCaseResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/PetResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/PetResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/VisitResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/VisitResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/OfficialService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/OfficialService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/OwnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/OwnerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/PetCaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/PetCaseService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/PetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/PetService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/UserAppService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/UserAppService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/VetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/VetService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/VisitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/VisitService.java" afterDir="false" />
     </list>
@@ -251,7 +241,7 @@
       <workItem from="1623268612938" duration="5785000" />
       <workItem from="1623275364721" duration="11672000" />
       <workItem from="1623288771703" duration="6980000" />
-      <workItem from="1623354549524" duration="5988000" />
+      <workItem from="1623354549524" duration="7955000" />
     </task>
     <servers />
   </component>

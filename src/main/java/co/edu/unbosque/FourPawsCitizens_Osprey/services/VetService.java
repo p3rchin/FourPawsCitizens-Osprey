@@ -16,12 +16,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Creating VetService with methods
+ */
 @Stateless
 public class VetService {
 
     UserAppRepository userAppRepository;
     VetRepository vetRepository;
 
+    /**
+     * Creating method listVets
+     *
+     * @return A list of Pojos of Vets
+     */
     public List<VetPOJO> listVets() {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
@@ -47,6 +55,13 @@ public class VetService {
         return vetsPOJO;
     }
 
+    /**
+     * Creating method saveVets
+     *
+     * @param vet is the occupation of the user. vet!=null
+     * @param username is the nickname for the UserApp. Username!=null, Username!=" "
+     * @return an Vet
+     */
     public Optional<Vet> saveVets(Vet vet, String username) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
@@ -67,6 +82,11 @@ public class VetService {
         return persistedOwner;
     }
 
+    /**
+     * Creating method updateVet
+     *
+     * @param vet is the occupation of the user. vet!=null
+     */
     public void updateVet(Vet vet) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");

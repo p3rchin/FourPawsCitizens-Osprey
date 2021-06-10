@@ -13,12 +13,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Creating VisitService with methods
+ */
 @Stateless
 public class VisitService {
 
     VisitRepository visitRepository;
     VetRepository vetRepository;
 
+    /**
+     * Creating method listVisit
+     *
+     * @return A list of Pojos of Visits
+     */
     public List<VisitPOJO> listVisit() {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
@@ -45,6 +53,13 @@ public class VisitService {
         return visitsPOJO;
     }
 
+    /**
+     * Creating method saveVisit
+     *
+     * @param vetId is the id of the visit. vetId!=null, vetId!=" "
+     * @param visit is the visit for a pet created by a vet. visit!=null
+     * @return an visit
+     */
     public void saveVisit(Integer vetId, Visit visit) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");

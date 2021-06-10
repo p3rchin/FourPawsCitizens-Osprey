@@ -13,12 +13,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Creating OfficialService with methods
+ */
 @Stateless
 public class OfficialService {
 
     OfficialRepository officialRepository;
     UserAppRepository userAppRepository;
 
+    /**
+     * Creating method listOfficial
+     *
+     * @return A list of Pojos of Officials
+     */
     public List<OfficialPOJO> listOfficial() {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
@@ -42,6 +50,13 @@ public class OfficialService {
         return officialsPOJO;
     }
 
+    /**
+     * Creating method saveOfficial
+     *
+     * @param official is the occupation of the user. official!=null
+     * @param username is the nickname for the UserApp. Username!=null, Username!=" "
+     * @return an Official
+     */
     public Optional<Official> saveOfficial(Official official, String username) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");

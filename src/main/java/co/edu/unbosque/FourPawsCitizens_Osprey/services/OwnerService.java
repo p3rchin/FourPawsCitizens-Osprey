@@ -16,12 +16,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Creating OwnerService with methods
+ */
 @Stateless
 public class OwnerService {
     UserAppRepository userAppRepository;
     OwnerRepository ownerRepository;
 
-
+    /**
+     * Creating method listOwners
+     *
+     * @return A list of Pojos of Owners
+     */
     public List<OwnerPOJO> listOwners() {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
@@ -48,6 +55,13 @@ public class OwnerService {
         return ownersPOJO;
     }
 
+    /**
+     * Creating method saveOwner
+     *
+     * @param owner is the occupation of the user. owner!=null
+     * @param username is the nickname for the UserApp. Username!=null, Username!=" "
+     * @return an Owner
+     */
     public Optional<Owner> saveOwner(Owner owner, String username) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
@@ -67,6 +81,11 @@ public class OwnerService {
         return persistedOwner;
     }
 
+    /**
+     * Creating method updateOwner
+     *
+     * @param owner is the occupation of the user. owner!=null
+     */
     public void updateOwner(Owner owner) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");

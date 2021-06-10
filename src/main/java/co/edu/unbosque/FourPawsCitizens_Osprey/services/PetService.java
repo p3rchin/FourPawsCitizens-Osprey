@@ -17,12 +17,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Creating PetService with methods
+ */
 @Stateless
 public class PetService {
 
     PetRepository petRepository;
     OwnerRepository ownerRepository;
 
+    /**
+     * Creating method listPets
+     *
+     * @return A list of Pojos of Pets
+     */
     public List<PetPOJO> listPets() {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
@@ -52,6 +60,13 @@ public class PetService {
         return petsPOJO;
     }
 
+    /**
+     * Creating method savePet
+     *
+     * @param ownerId is the id of the owner. ownerId!=null, ownerId!=" "
+     * @param pet is a pet of an owner. pet!=null
+     * @return an pet
+     */
     public void savePet(Integer ownerId, Pet pet) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
@@ -69,12 +84,9 @@ public class PetService {
             ownerRepository.save(a);
         });
 
-
         entityManager.close();
         entityManagerFactory.close();
 
-
         return;
-
     }
 }
