@@ -26,11 +26,11 @@ public class VetRepositoryImpl implements VetRepository {
     /**
      * Creating method fyndByUsername
      *
-     * @param vetId is the username for the Vet. Username!=null, Username!=" "
+     * @param username is the nickname for the Vet. username!=null, username!=" "
      * @return the Vet.
      */
-    public Optional<Vet> findById(Integer vetId) {
-        Vet vet = entityManager.find(Vet.class, vetId);
+    public Optional<Vet> findByUsername(String username) {
+        Vet vet = entityManager.find(Vet.class, username);
         return vet != null ? Optional.of(vet) : Optional.empty();
     }
 
@@ -44,29 +44,6 @@ public class VetRepositoryImpl implements VetRepository {
     }
 
 
-    /**
-     * Creating method to udpdate an Vet
-     *
-     * @param name         is the name of the Vet. name!=null, name!=" "
-     * @param address      is the addres of the Vet. address!=null, address!=" "
-     * @param neighborhood is the neighborhood. neighborhood!=null, neighborhood!=" "
-     * @param Username     is the username of the Vet. Username!=null, Username!=" "
-     */
-    public void updateByUsername(String name, String address, String neighborhood, String Username) {
-        Vet vet = entityManager.find(Vet.class, Username);
-        if (vet != null) {
-            try {
-                entityManager.getTransaction().begin();
-                vet.setName(name);
-                vet.setAddress(address);
-                vet.setNeighborhood(neighborhood);
-                entityManager.merge(vet);
-                entityManager.getTransaction().commit();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
 
     /**
      * Creating method save the Vet

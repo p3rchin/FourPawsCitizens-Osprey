@@ -33,7 +33,7 @@ public class OwnersResourceTotal {
         List<OwnerPOJO> owners = new OwnerService().listOwners();
         List<OwnerPOJO> ownersParam = new ArrayList<>();
         for (int i = 0; i < owners.size(); i++) {
-            if (param.equals(owners.get(i).getOwnerId()) || param.equals(owners.get(i).getUsername()) || param.equals("" + owners.get(i).getPersonId()) || param.equals(owners.get(i).getName()) || param.equals(owners.get(i).getAddress()) || param.equals(owners.get(i).getNeighborhood())) {
+            if (param.equals(owners.get(i).getUsername()) || param.equals(owners.get(i).getPassword()) || param.equals("" + owners.get(i).getPersonId()) || param.equals(owners.get(i).getEmail()) || param.equals(owners.get(i).getName()) || param.equals(owners.get(i).getAddress()) || param.equals(owners.get(i).getNeighborhood())) {
                 ownersParam.add(owners.get(i));
             }
         }

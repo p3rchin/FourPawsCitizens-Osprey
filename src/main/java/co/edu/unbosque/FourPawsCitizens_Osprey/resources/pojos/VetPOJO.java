@@ -5,8 +5,10 @@ package co.edu.unbosque.FourPawsCitizens_Osprey.resources.pojos;
  */
 public class VetPOJO {
 
-    private Integer vetId;
+
     private String username;
+    private String password;
+    private String email;
     private String name;
     private String address;
     private String neighborhood;
@@ -18,27 +20,36 @@ public class VetPOJO {
     }
 
     /**
-     * Creating the pojo constructor of Vet
-     * @param vetId is the id of the vet, vetId!=null, vetId!=" ".
-     * @param username is the username of the vet, username!=null, username!=" ".
-     * @param name is the name of the vet, name!=null, name!=" ".
-     * @param address is the address of the vet, address!=null, address!=" ".
+     * @param username     is the username of the owner, username!=null, username!=" ".
+     * @param password     is the key word to access, password!=null, password!=" ".
+     * @param email        is the digital address of a person, email!=null, email!=" ".
+     * @param name         is the name of the vet, name!=null, name!=" ".
+     * @param address      is the address of the vet, address!=null, address!=" ".
      * @param neighborhood is the neighborhood of the vet, neighborhood!=null, neighborhood!=" ".
      */
-    public VetPOJO(Integer vetId, String username, String name, String address, String neighborhood) {
-        this.vetId = vetId;
+    public VetPOJO(String username, String password, String email, String name, String address, String neighborhood) {
         this.username = username;
+        this.password = password;
+        this.email = email;
         this.name = name;
         this.address = address;
         this.neighborhood = neighborhood;
     }
 
-    public Integer getVetId() {
-        return vetId;
+    public String getPassword() {
+        return password;
     }
 
-    public void setVetId(Integer vetId) {
-        this.vetId = vetId;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getUsername() {

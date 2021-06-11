@@ -5,8 +5,9 @@ package co.edu.unbosque.FourPawsCitizens_Osprey.resources.pojos;
  */
 public class OwnerPOJO {
 
-    private Integer ownerId;
     private String username;
+    private String password;
+    private String email;
     private Integer personId;
     private String name;
     private String address;
@@ -18,30 +19,42 @@ public class OwnerPOJO {
     public OwnerPOJO() {
     }
 
+
+
     /**
-     * Creating the pojo constructor of Owner
-     * @param ownerId is the id of the owner, ownerId!=null, ownerId!=" ".
-     * @param username is the username of the owner, username!=null, username!=" ".
-     * @param personId is the id of the person, personId!=null, personId!=" ".
-     * @param name is the name of the owner, name!=null, name!=" ".
-     * @param address is the address of the owner , address!=null, address!=" ".
+     *
+     * @param username     is the username of the owner, username!=null, username!=" ".
+     * @param password     is the key word to access, password!=null, password!=" ".
+     * @param email        is the digital address of a person, email!=null, email!=" ".
+     * @param personId     is the id of the person, personId!=null, personId!=" ".
+     * @param name         is the name of the owner, name!=null, name!=" ".
+     * @param address      is the address of the owner , address!=null, address!=" ".
      * @param neighborhood is the neighborhood of the owner,  neighborhood!=null, neighborhood!=" ".
      */
-    public OwnerPOJO(Integer ownerId, String username, Integer personId, String name, String address, String neighborhood) {
-        this.ownerId = ownerId;
+    public OwnerPOJO(String username, String password, String email, Integer personId, String name, String address, String neighborhood) {
         this.username = username;
+        this.password = password;
+        this.email = email;
         this.personId = personId;
         this.name = name;
         this.address = address;
         this.neighborhood = neighborhood;
     }
 
-    public Integer getOwnerId() {
-        return ownerId;
+    public String getPassword() {
+        return password;
     }
 
-    public void setOwnerId(Integer ownerId) {
-        this.ownerId = ownerId;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getUsername() {

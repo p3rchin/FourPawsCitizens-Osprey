@@ -53,7 +53,7 @@ public class PetService {
                     pet.getSize(),
                     pet.getSex(),
                     pet.getPicture(),
-                    pet.getOwner().getOwnerId()
+                    pet.getUsername().getUsername()
             ));
         }
 
@@ -63,11 +63,11 @@ public class PetService {
     /**
      * Creating method savePet
      *
-     * @param ownerId is the id of the owner. ownerId!=null, ownerId!=" "
+     * @param username is the nickname of the owner. username!=null, username!=" "
      * @param pet is a pet of an owner. pet!=null
      * @return an pet
      */
-    public void savePet(Integer ownerId, Pet pet) {
+    public void savePet(String username, Pet pet) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -75,11 +75,11 @@ public class PetService {
         ownerRepository = new OwnerRepositoryImpl(entityManager);
         petRepository = new PetRepositoryImpl(entityManager);
 
-        Optional<Owner> owner = ownerRepository.findById(ownerId);
+        Optional<Owner> owner = ownerRepository.findByUsername(username);
         Owner owner1 = owner.get();
         owner.ifPresent(a -> {
             Pet petDb = new Pet(pet.getPetId(), pet.getMicrochip(), pet.getName(), pet.getSpecies(), pet.getRace(), pet.getSize(), pet.getSex(), pet.getPicture());
-            petDb.setOwner(owner1);
+            petDb.setUsername(owner1);
             a.addPet(petDb);
             ownerRepository.save(a);
         });

@@ -6,55 +6,23 @@ import javax.persistence.*;
  * Creating  Official with constructors and Getters and Setters
  */
 @Entity
-@Table(name = "Official") // Optional
-@NamedQueries({
-        @NamedQuery(name = "Official.findByName",
-                query = "SELECT a FROM Official a WHERE a.username = :username")
-})
-public class Official {
-
-    @Id
-    @GeneratedValue
-    @Column(name = "offcial_id", unique = true)
-    private Integer officialId;
-
-    @OneToOne
-    @JoinColumn(name = "username")
-    private UserApp username;
+@Table(name = "Official")
+@PrimaryKeyJoinColumn
+public class Official extends UserApp {
 
     @Column(name = "name")
     private String name;
 
-    /**
-     * Creating an specific constructor
-     *
-     * @param officialId is the id of the official,officialId!=null, officialId!=" "
-     * @param username   is the username of the user that was enter in the program. username != null, username !=" "
-     * @param name       is the name of the user. name!=null, name!=" "
-     */
-    public Official(Integer officialId, UserApp username, String name) {
-        this.officialId = officialId;
-        this.username = username;
-        this.name = name;
-    }
 
     /**
      * Creating an specific constructor
-     *
-     * @param officialId is the id of the official,officialId!=null, officialId!=" "
-     * @param name       is the name of the user. name!=null, name!=" "
-     */
-    public Official(Integer officialId, String name) {
-        this.officialId = officialId;
-        this.name = name;
-    }
-
-    /**
-     * Creating an specific constructor
-     *
+     * @param username     is the name that was created by the program . username!= null, username!= " "
+     * @param password     is the key that has the user that open the program. password != null, username!=" "
+     * @param email        is the @ that has the user. email != null, email != " "
      * @param name is the name of the user. name!=null, name!=" "
      */
-    public Official(String name) {
+    public Official(String username, String password, String email,String name) {
+        super(username, password, email, "official");
         this.name = name;
     }
 
@@ -65,27 +33,11 @@ public class Official {
 
     }
 
-    public UserApp getUsername() {
-        return username;
-    }
-
-    public void setUsername(UserApp username) {
-        this.username = username;
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Integer getOfficialId() {
-        return officialId;
-    }
-
-    public void setOfficialId(Integer officialId) {
-        this.officialId = officialId;
     }
 }

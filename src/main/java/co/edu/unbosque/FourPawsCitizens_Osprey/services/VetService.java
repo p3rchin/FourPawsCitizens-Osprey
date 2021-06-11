@@ -22,7 +22,6 @@ import java.util.Optional;
 @Stateless
 public class VetService {
 
-    UserAppRepository userAppRepository;
     VetRepository vetRepository;
 
     /**
@@ -44,8 +43,9 @@ public class VetService {
         List<VetPOJO> vetsPOJO = new ArrayList<>();
         for (Vet vet : vets) {
             vetsPOJO.add(new VetPOJO(
-                    vet.getVetId(),
-                    vet.getUsername().getUsername(),
+                    vet.getUsername(),
+                    vet.getPassword(),
+                    vet.getEmail(),
                     vet.getName(),
                     vet.getAddress(),
                     vet.getNeighborhood()
@@ -58,45 +58,32 @@ public class VetService {
     /**
      * Creating method saveVets
      *
-     * @param vet is the occupation of the user. vet!=null
-     * @param username is the nickname for the UserApp. Username!=null, Username!=" "
+     * @param vetPOJO is the nickname for the UserApp. Username!=null, Username!=" "
      * @return an Vet
      */
-    public Optional<Vet> saveVets(Vet vet, String username) {
+    public Optional<VetPOJO> createVet(VetPOJO vetPOJO) {
 
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-        userAppRepository = new UserAppRepositoryImpl(entityManager);
         vetRepository = new VetRepositoryImpl(entityManager);
 
-
-        UserApp userApp = userAppRepository.findByUsername(username).get();
-        Vet vetDb = new Vet(vet.getVetId(), vet.getName(), vet.getAddress(), vet.getNeighborhood());
-        vetDb.setUsername(userApp);
-        Optional<Vet> persistedOwner = vetRepository.save(vetDb);
+        Vet vet = new Vet(vetPOJO.getUsername(), vetPOJO.getPassword(), vetPOJO.getEmail(), vetPOJO.getName(), vetPOJO.getAddress(), vetPOJO.getNeighborhood());
+        Optional<Vet> persistedVet = vetRepository.save(vet);
 
         entityManager.close();
         entityManagerFactory.close();
 
-        return persistedOwner;
-    }
-
-    /**
-     * Creating method updateVet
-     *
-     * @param vet is the occupation of the user. vet!=null
-     */
-    public void updateVet(Vet vet) {
-
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
-
-        vetRepository = new VetRepositoryImpl(entityManager);
-        vetRepository.updateByUsername(vet.getName(), vet.getAddress(), vet.getNeighborhood(), vet.getUsername().getUsername());
-
-        entityManager.close();
-        entityManagerFactory.close();
+        if (persistedVet.isPresent()) {
+            return Optional.of(new VetPOJO(persistedVet.get().getUsername(),
+                    persistedVet.get().getPassword(),
+                    persistedVet.get().getEmail(),
+                    persistedVet.get().getName(),
+                    persistedVet.get().getAddress(),
+                    persistedVet.get().getNeighborhood()));
+        } else {
+            return Optional.empty();
+        }
 
     }
 

@@ -1,8 +1,11 @@
 package co.edu.unbosque.FourPawsCitizens_Osprey.resources;
 
+import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Vet;
 import co.edu.unbosque.FourPawsCitizens_Osprey.resources.filters.Logged;
 import co.edu.unbosque.FourPawsCitizens_Osprey.resources.pojos.UserAppPOJO;
+import co.edu.unbosque.FourPawsCitizens_Osprey.resources.pojos.VetPOJO;
 import co.edu.unbosque.FourPawsCitizens_Osprey.services.UserAppService;
+import co.edu.unbosque.FourPawsCitizens_Osprey.services.VetService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -38,23 +41,20 @@ public class VetLoginResource {
     }
 
     /**
-     * This operation of Restful create the pet user
+     * This operation of Restful create the vet
      *
-     * @param user is the object type of user  to login. user!=null
-     * @return the vet user created.
+     * @param vet is the occupation of the user. vet!=null
+     * @return the object vet created.
      */
-
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response create(UserAppPOJO user) {
-        user.setRole("vet");
-        Optional<UserAppPOJO> persistedUser = new UserAppService().createUser(user);
+    public Response create(VetPOJO vet) {
+        Optional<VetPOJO> persistedVet = new VetService().createVet(vet);
 
-        if (persistedUser.isPresent()) {
+        if (persistedVet.isPresent()) {
             return Response.status(Response.Status.CREATED)
-                    .entity(persistedUser.get())
-                    .build();
+                    .entity(persistedVet.get()).build();
         } else {
             return Response.serverError()
                     .entity("Vet user could not be created")

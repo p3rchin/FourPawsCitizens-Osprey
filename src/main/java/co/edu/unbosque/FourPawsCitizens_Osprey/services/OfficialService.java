@@ -20,7 +20,7 @@ import java.util.Optional;
 public class OfficialService {
 
     OfficialRepository officialRepository;
-    UserAppRepository userAppRepository;
+
 
     /**
      * Creating method listOfficial
@@ -41,8 +41,9 @@ public class OfficialService {
         List<OfficialPOJO> officialsPOJO = new ArrayList<>();
         for (Official official : officials) {
             officialsPOJO.add(new OfficialPOJO(
-                    official.getOfficialId(),
-                    official.getUsername().getUsername(),
+                    official.getUsername(),
+                    official.getPassword(),
+                    official.getEmail(),
                     official.getName()
             ));
         }
@@ -53,27 +54,31 @@ public class OfficialService {
     /**
      * Creating method saveOfficial
      *
-     * @param official is the occupation of the user. official!=null
-     * @param username is the nickname for the UserApp. Username!=null, Username!=" "
+     * @param officialPOJO is the nickname for the UserApp. Username!=null, Username!=" "
      * @return an Official
      */
-    public Optional<Official> saveOfficial(Official official, String username) {
+    public Optional<OfficialPOJO> createofficial(OfficialPOJO officialPOJO) {
 
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-        userAppRepository = new UserAppRepositoryImpl(entityManager);
         officialRepository = new OfficialRepositoryImpl(entityManager);
 
-        UserApp userApp = userAppRepository.findByUsername(username).get();
-        Official officialDb = new Official(official.getOfficialId(), official.getName());
-        officialDb.setUsername(userApp);
-        Optional<Official> persistedOwner = officialRepository.save(officialDb);
+        Official official = new Official(officialPOJO.getUsername(), officialPOJO.getPassword(), officialPOJO.getEmail(), officialPOJO.getName());
+        Optional<Official> persistedOfficial = officialRepository.save(official);
 
         entityManager.close();
         entityManagerFactory.close();
 
-        return persistedOwner;
+        if (persistedOfficial.isPresent()) {
+            return Optional.of(new OfficialPOJO(persistedOfficial.get().getUsername(),
+                    persistedOfficial.get().getPassword(),
+                    persistedOfficial.get().getEmail(),
+                    persistedOfficial.get().getName()));
+        } else {
+            return Optional.empty();
+        }
+
     }
 
 }

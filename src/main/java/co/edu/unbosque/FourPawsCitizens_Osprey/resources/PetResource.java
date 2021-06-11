@@ -13,21 +13,21 @@ import java.util.Optional;
 /**
  * Creating the resource of pet with @Path and  @Post notation
  */
-@Path("/owners/{owner_id}/pets")
+@Path("/owners/{username}/pets")
 public class PetResource {
     /**
      * This operation of Restful create the pet
      *
-     * @param ownerId is the nickname of the owner, ownerId!=null, ownerId!=" "
+     * @param username is the nickname of the owner, username!=null, username!=" "
      * @param pet     is the occupation of the user, pet!=null
      * @return the object pet created.
      */
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response create(@PathParam("owner_id") Integer ownerId, Pet pet) {
+    public Response create(@PathParam("username") String username, Pet pet) {
         PetService petService = new PetService();
-        petService.savePet(ownerId, pet);
+        petService.savePet(username, pet);
 
         return Response.status(Response.Status.CREATED)
                 .entity(pet).build();

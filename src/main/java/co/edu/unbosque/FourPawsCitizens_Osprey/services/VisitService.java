@@ -45,7 +45,7 @@ public class VisitService {
                     visit.getCreated_at(),
                     visit.getType(),
                     visit.getDescription(),
-                    visit.getVet().getVetId(),
+                    visit.getUsername().getUsername(),
                     visit.getPet().getPetId()
             ));
         }
@@ -56,11 +56,11 @@ public class VisitService {
     /**
      * Creating method saveVisit
      *
-     * @param vetId is the id of the visit. vetId!=null, vetId!=" "
+     * @param username is the nickname of the vet. username!=null, username!=" "
      * @param visit is the visit for a pet created by a vet. visit!=null
      * @return an visit
      */
-    public void saveVisit(Integer vetId, Visit visit) {
+    public void saveVisit(String username, Visit visit) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -68,11 +68,11 @@ public class VisitService {
         vetRepository = new VetRepositoryImpl(entityManager);
         visitRepository = new VisitRepositoryImpl(entityManager);
 
-        Optional<Vet> vet = vetRepository.findById(vetId);
+        Optional<Vet> vet = vetRepository.findByUsername(username);
         Vet vet1 = vet.get();
         vet.ifPresent(a -> {
             Visit visitDb = new Visit(visit.getVisit_id(), visit.getCreated_at(), visit.getType(), visit.getDescription(), visit.getPet());
-            visitDb.setVet(vet1);
+            visitDb.setUsername(vet1);
             a.addVisit(visitDb);
             vetRepository.save(a);
         });

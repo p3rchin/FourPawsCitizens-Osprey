@@ -33,7 +33,7 @@ public class PetResourceTotal {
         List<PetPOJO> pets = new PetService().listPets();
         List<PetPOJO> petsParam = new ArrayList<>();
         for (int i = 0; i < pets.size(); i++) {
-            if (param.equals(pets.get(i).getName()) || param.equals(pets.get(i).getMicrochip()) || param.equals(pets.get(i).getPetId()) || param.equals(pets.get(i).getOwnerId()) || param.equals(pets.get(i).getPicture()) || param.equals(pets.get(i).getRace()) || param.equals(pets.get(i).getSex()) || param.equals(pets.get(i).getSize()) || param.equals(pets.get(i).getSpecies())) {
+            if (param.equals(pets.get(i).getName()) || param.equals(pets.get(i).getMicrochip()) || param.equals(pets.get(i).getPetId()) || param.equals(pets.get(i).getUsername()) || param.equals(pets.get(i).getPicture()) || param.equals(pets.get(i).getRace()) || param.equals(pets.get(i).getSex()) || param.equals(pets.get(i).getSize()) || param.equals(pets.get(i).getSpecies())) {
                 petsParam.add(pets.get(i));
             }
         }

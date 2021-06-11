@@ -15,8 +15,8 @@ public interface OfficialRepository {
      * @param Username is the username for the Official. Username!=null, Username!=" "
      * @return the Username
      */
-    Optional<Official> fyndByUsername(String Username);
 
+    Optional<Official> fyndByUsername(String Username);
     /**
      * Creating method findAll
      * @return All the Officials

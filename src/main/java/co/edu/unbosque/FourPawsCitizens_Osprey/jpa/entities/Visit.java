@@ -30,8 +30,8 @@ public class Visit {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "vet_id")
-    private Vet vet;
+    @JoinColumn(name = "username")
+    private Vet username;
 
     @ManyToOne
     @JoinColumn(name = "pet_id")
@@ -47,18 +47,18 @@ public class Visit {
      * Creating an specific constructor
      *
      * @param visit_id    the id that was created by the program. visit_id!=null , visit_id!=" "
-     * @param created_at  the date that was created the visit. created_at !=null, created_at visit_id!=" "
-     * @param type        is the type of the visit. type!=null , type visit_id!=" "
-     * @param description the qualities that has the visit . description!=null, description visit_id!=" "
-     * @param vet         the id that has the vet. vet_id !=null, vet_id visit_id!=" "
-     * @param pet         the id that has the pet. pet_id!=null, pet_id visit_id!=" "
+     * @param created_at  the date that was created the visit. created_at !=null, created_at!=" "
+     * @param type        is the type of the visit. type!=null , type !=" "
+     * @param description the qualities that has the visit . description!=null, description !=" "
+     * @param username    is the nickname of the  vet. username !=null, username!=" "
+     * @param pet         the id that has the pet. pet_id!=null, pet_id!=" "
      */
-    public Visit(int visit_id, String created_at, String type, String description, Vet vet, Pet pet) {
+    public Visit(int visit_id, String created_at, String type, String description, Vet username, Pet pet) {
         this.visit_id = visit_id;
         this.created_at = created_at;
         this.type = type;
         this.description = description;
-        this.vet = vet;
+        this.username = username;
         this.pet = pet;
     }
 
@@ -66,10 +66,10 @@ public class Visit {
      * Creating an specific constructor
      *
      * @param visit_id    the id that was created by the program. visit_id!=null , visit_id!=" "
-     * @param created_at  the date that was created the visit. created_at !=null, created_at visit_id!=" "
-     * @param type        is the type of the visit. type!=null , type visit_id!=" "
-     * @param description the qualities that has the visit . description!=null, description visit_id!=" "
-     * @param pet         the id that has the pet. pet_id!=null, pet_id visit_id!=" "
+     * @param created_at  the date that was created the visit. created_at !=null, created_at !=" "
+     * @param type        is the type of the visit. type!=null , type !=" "
+     * @param description the qualities that has the visit . description!=null, description !=" "
+     * @param pet         the id that has the pet. pet_id!=null, pet_id !=" "
      */
     public Visit(int visit_id, String created_at, String type, String description, Pet pet) {
         this.visit_id = visit_id;
@@ -128,12 +128,11 @@ public class Visit {
         this.description = description;
     }
 
-    public Vet getVet() {
-        return vet;
+    public Vet getUsername() {
+        return username;
     }
-
-    public void setVet(Vet vet) {
-        this.vet = vet;
+    public void setUsername(Vet username) {
+        this.username = username;
     }
 
     public Pet getPet() {

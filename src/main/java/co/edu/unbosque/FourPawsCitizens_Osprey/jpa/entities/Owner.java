@@ -9,23 +9,9 @@ import java.util.List;
  * Creating the  Owner with constructor and Getters and Setters
  */
 @Entity
-@Table(name = "Owner") // Optional
-@NamedQueries({
-        @NamedQuery(name = "Owner.findByName",
-                query = "SELECT a FROM Owner a WHERE a.username = :username")
-})
-
-public class Owner {
-
-
-    @Id
-    @GeneratedValue
-    @Column(name = "owner_id")
-    private Integer ownerId;
-
-    @OneToOne
-    @JoinColumn(name = "username")
-    private UserApp username;
+@Table(name = "Owner")
+@PrimaryKeyJoinColumn
+public class Owner extends UserApp {
 
     @Column(name = "person_id", unique = true)
     private Integer personId;
@@ -39,7 +25,7 @@ public class Owner {
     @Column(name = "neighborhood")
     private String neighborhood;
 
-    @OneToMany(mappedBy = "owner", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "username", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Pet> pets = new ArrayList<>();
 
     /**
@@ -48,37 +34,21 @@ public class Owner {
     public Owner() {
     }
 
+
     /**
      * Creating an specific constructor
      *
-     * @param ownerId      is the id of the owner, ownerId != null, ownerId !=" ".
-     * @param username     is the name that was created in the program. username != null, username !=" ".
+     * @param username     is the name that was created by the program . username!= null, username!= " "
+     * @param password     is the key that has the user that open the program. password != null, username!=" "
+     * @param email        is the @ that has the user. email != null, email != " "
      * @param personId     is the id of the person. personId != null, personId!=" ".
      * @param name         is the name of the owner. name != null, name !=" "
      * @param address      is the location for the house. address!= null, address
      * @param neighborhood is the location where the owner live. neighborhood != null ,neighborhood != " "
      */
 
-    public Owner(Integer ownerId, UserApp username, Integer personId, String name, String address, String neighborhood) {
-        this.ownerId = ownerId;
-        this.username = username;
-        this.personId = personId;
-        this.name = name;
-        this.address = address;
-        this.neighborhood = neighborhood;
-    }
-
-    /**
-     * Creating an specific constructor
-     * @param ownerId      is the id of the owner, ownerId != null, ownerId !=" ".
-     * @param personId     is the id of the person. personId != null, personId!=" ".
-     * @param name         is the name of the owner. name != null, name !=" "
-     * @param address      is the location for the house. address!= null, address
-     * @param neighborhood is the location where the owner live. neighborhood != null ,neighborhood != " "
-     */
-
-    public Owner(Integer ownerId, Integer personId, String name, String address, String neighborhood) {
-        this.ownerId = ownerId;
+    public Owner(String username, String password, String email, Integer personId, String name, String address, String neighborhood) {
+        super(username, password, email, "owner");
         this.personId = personId;
         this.name = name;
         this.address = address;
@@ -100,22 +70,6 @@ public class Owner {
         this.neighborhood = neighborhood;
     }
 
-
-    public Integer getOwnerId() {
-        return ownerId;
-    }
-
-    public void setOwnerId(Integer ownerId) {
-        this.ownerId = ownerId;
-    }
-
-    public UserApp getUsername() {
-        return username;
-    }
-
-    public void setUsername(UserApp username) {
-        this.username = username;
-    }
 
     public List<Pet> getPets() {
         return pets;
@@ -159,7 +113,7 @@ public class Owner {
 
     public void addPet(Pet pet) {
         pets.add(pet);
-        pet.setOwner(this);
+        pet.setUsername(this);
     }
 
 }

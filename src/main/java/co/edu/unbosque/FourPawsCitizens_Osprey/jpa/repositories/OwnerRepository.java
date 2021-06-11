@@ -12,10 +12,10 @@ public interface OwnerRepository {
 
     /**
      * Creating method fyndByUsername
-     * @param ownerId is the id for the Owner. ownerId!=null, ownerId!=" "
+     * @param username is the id for the Owner. username!=null, username!=" "
      * @return the Owner
      */
-    Optional<Owner> findById(Integer ownerId);
+    Optional<Owner> findByUsername(String username);
     /**
      * Creating method findAll
      * @return All the owners
@@ -23,13 +23,16 @@ public interface OwnerRepository {
     List<Owner> findAll();
 
     /**
-     * Creating method to udpdate an Owner
-     * @param name is the name of the owner. name!=null, name!=" "
-     * @param address is the addres of the owner. address!=null, address!=" "
+     *  Creating method to udpdate an Owner
+     * @param username is the username of the owner. Username!=null, Username!=" "
+     * @param password     is the key that has the user that open the program. password != null, username!=" "
+     * @param email        is the @ that has the user. email != null, email != " "
+     * @param personId     is the number to identify a person, personId!=null, personId!=" "
+     * @param name         is the name of the owner. name!=null, name!=" "
+     * @param address      is the addres of the owner. address!=null, address!=" "
      * @param neighborhood is the neighborhood. neighborhood!=null, neighborhood!=" "
-     * @param Username is the username of the owner. Username!=null, Username!=" "
      */
-    void updateByUsername(String name, String address, String neighborhood,String Username,Integer personId);
+    void updateByUsername(String username, String password, String email,Integer personId, String name, String address, String neighborhood);
 
     /**
      * Creating method save the Owner

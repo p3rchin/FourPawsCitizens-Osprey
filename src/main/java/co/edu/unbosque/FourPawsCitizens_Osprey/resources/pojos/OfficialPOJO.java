@@ -5,8 +5,9 @@ package co.edu.unbosque.FourPawsCitizens_Osprey.resources.pojos;
  */
 public class OfficialPOJO {
 
-    private Integer officialId;
     private String username;
+    private String password;
+    private String email;
     private String name;
 
     /**
@@ -17,22 +18,17 @@ public class OfficialPOJO {
 
     /**
      * Creating the pojo constructor of Official
-     * @param officialId is the id of the official, officialId!=null, officialId!=" ".
+     *
      * @param username is the username of the official, username!=null, username!=" ".
-     * @param name is the name of the official, name!=null, name!=" ".
+     * @param password is the key word to access, password!=null, password!=" ".
+     * @param email    is the digital address of a person, email!=null, email!=" ".
+     * @param name     is the name of the official, name!=null, name!=" ".
      */
-    public OfficialPOJO(Integer officialId, String username, String name) {
-        this.officialId = officialId;
+    public OfficialPOJO(String username, String password, String email, String name) {
         this.username = username;
+        this.password = password;
+        this.email = email;
         this.name = name;
-    }
-
-    public Integer getOfficialId() {
-        return officialId;
-    }
-
-    public void setOfficialId(Integer officialId) {
-        this.officialId = officialId;
     }
 
     public String getUsername() {
@@ -49,5 +45,21 @@ public class OfficialPOJO {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

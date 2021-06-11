@@ -33,25 +33,6 @@ public class UserAppRepositoryImpl implements UserAppRepository {
         return userApp != null ? Optional.of(userApp) : Optional.empty();
     }
 
-    /**
-     * Creating method fyndByUsername2
-     *
-     * @param Username is the username for the UserApp. Username!=null, Username!=" "
-     * @return the UserApp
-     */
-    public UserApp fyndByUsername2(String Username) {
-        UserApp userApp = entityManager.find(UserApp.class, Username);
-        return userApp;
-    }
-
-    /**
-     * Creating method findAll
-     *
-     * @return All the UserApps
-     */
-    public List<UserApp> findAll() {
-        return entityManager.createQuery("from UserApp").getResultList();
-    }
 
     /**
      * Creating method save the UserApp

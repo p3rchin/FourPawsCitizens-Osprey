@@ -30,7 +30,7 @@ public class VetsResourceTotal {
         List<VetPOJO> vets = new VetService().listVets();
         List<VetPOJO> vetsParam = new ArrayList<>();
         for (int i = 0; i < vets.size(); i++) {
-            if (param.equals(vets.get(i).getVetId()) || param.equals(vets.get(i).getUsername()) || param.equals(vets.get(i).getName()) || param.equals(vets.get(i).getAddress()) || param.equals(vets.get(i).getNeighborhood())) {
+            if (param.equals(vets.get(i).getUsername()) || param.equals(vets.get(i).getPassword()) || param.equals(vets.get(i).getEmail()) || param.equals(vets.get(i).getName()) || param.equals(vets.get(i).getAddress()) || param.equals(vets.get(i).getNeighborhood())) {
                 vetsParam.add(vets.get(i));
             }
         }

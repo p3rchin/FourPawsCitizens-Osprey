@@ -13,7 +13,7 @@ public class PetPOJO {
     private String size;
     private String sex;
     private String picture;
-    private Integer ownerId;
+    private String username;
 
     /**
      * Creating the pojo constructor of Pet
@@ -31,9 +31,9 @@ public class PetPOJO {
      * @param size is the size of the pet, size!=null, size!=" ".
      * @param sex is the sex of the pet, sex!=null, sex!=" ".
      * @param picture is the picture of the pet, picture!=null, picture!=" ".
-     * @param ownerId is the id of the owner, ownerId!=null, ownerId!=" ".
+     * @param username is the nickname of the owner, username!=null, username!=" ".
      */
-    public PetPOJO(Integer petId, String microchip, String name, String species, String race, String size, String sex, String picture, Integer ownerId) {
+    public PetPOJO(Integer petId, String microchip, String name, String species, String race, String size, String sex, String picture, String username) {
         this.petId = petId;
         this.microchip = microchip;
         this.name = name;
@@ -42,7 +42,7 @@ public class PetPOJO {
         this.size = size;
         this.sex = sex;
         this.picture = picture;
-        this.ownerId = ownerId;
+        this.username = username;
     }
 
     public Integer getPetId() {
@@ -109,11 +109,11 @@ public class PetPOJO {
         this.picture = picture;
     }
 
-    public Integer getOwnerId() {
-        return ownerId;
+    public String getUsername() {
+        return username;
     }
 
-    public void setOwnerId(Integer ownerId) {
-        this.ownerId = ownerId;
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

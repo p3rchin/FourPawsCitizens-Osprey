@@ -28,11 +28,11 @@ public class OwnerRepositoryImpl implements OwnerRepository {
     /**
      * Creating method fyndByUsername
      *
-     * @param ownerId is the oid for the Owner. ownerId!=null, ownerId!=" "
+     * @param username is the nickname for the Owner. username!=null, username !=" "
      * @return the Owner
      */
-    public Optional<Owner> findById(Integer ownerId) {
-        Owner owner = entityManager.find(Owner.class, ownerId);
+    public Optional<Owner> findByUsername(String username) {
+        Owner owner = entityManager.find(Owner.class, username);
         return owner != null ? Optional.of(owner) : Optional.empty();
     }
 
@@ -64,23 +64,27 @@ public class OwnerRepositoryImpl implements OwnerRepository {
         return Optional.empty();
     }
 
+
     /**
-     * Creating method to udpdate an Owner
-     *
+     *  Creating method to udpdate an Owner
+     * @param username is the username of the owner. Username!=null, Username!=" "
+     * @param password     is the key that has the user that open the program. password != null, username!=" "
+     * @param email        is the @ that has the user. email != null, email != " "
+     * @param personId     is the number to identify a person, personId!=null, personId!=" "
      * @param name         is the name of the owner. name!=null, name!=" "
      * @param address      is the addres of the owner. address!=null, address!=" "
      * @param neighborhood is the neighborhood. neighborhood!=null, neighborhood!=" "
-     * @param Username     is the username of the owner. Username!=null, Username!=" "
-     * @param personId     is the number to identify a person, personId!=null, personId!=" "
      */
-    public void updateByUsername(String name, String address, String neighborhood, String Username, Integer personId) {
-        Owner owner = entityManager.find(Owner.class, Username);
+    public void updateByUsername(String username, String password, String email,Integer personId, String name, String address, String neighborhood) {
+        Owner owner = entityManager.find(Owner.class, username);
         if (owner != null) {
             try {
                 entityManager.getTransaction().begin();
+                owner.setPassword(password);
+                owner.setEmail(email);
+                owner.setPersonId(personId);
                 owner.setName(name);
                 owner.setAddress(address);
-                owner.setPersonId(personId);
                 owner.setNeighborhood(neighborhood);
                 entityManager.merge(owner);
                 entityManager.getTransaction().commit();

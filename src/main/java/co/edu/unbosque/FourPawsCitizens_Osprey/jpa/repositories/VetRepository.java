@@ -15,10 +15,10 @@ public interface VetRepository {
     /**
      * Creating method fyndByUsername
      *
-     * @param vetId is the username for the Vet. vetId!=null, vetId!=" "
+     * @param username is the nickname for the Vet. username!=null, username!=" "
      * @return the Vet.
      */
-    Optional<Vet> findById(Integer vetId);
+    Optional<Vet> findByUsername(String username);
 
     /**
      * Creating method findAll
@@ -27,15 +27,6 @@ public interface VetRepository {
      */
     List<Vet> findAll();
 
-    /**
-     * Creating method to udpdate an Vet
-     *
-     * @param name         is the name of the Vet. name!=null, name!=" "
-     * @param address      is the addres of the Vet. address!=null, address!=" "
-     * @param neighborhood is the neighborhood. neighborhood!=null, neighborhood!=" "
-     * @param Username     is the username of the Vet. Username!=null, Username!=" "
-     */
-    void updateByUsername(String name, String address, String neighborhood, String Username);
 
     /**
      * Creating method save the Vet

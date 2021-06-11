@@ -43,8 +43,9 @@ public class OwnerService {
         List<OwnerPOJO> ownersPOJO = new ArrayList<>();
         for (Owner owner : owners) {
             ownersPOJO.add(new OwnerPOJO(
-                    owner.getOwnerId(),
-                    owner.getUsername().getUsername(),
+                    owner.getUsername(),
+                    owner.getPassword(),
+                    owner.getEmail(),
                     owner.getPersonId(),
                     owner.getName(),
                     owner.getAddress(),
@@ -55,30 +56,38 @@ public class OwnerService {
         return ownersPOJO;
     }
 
+
     /**
      * Creating method saveOwner
-     *
-     * @param owner is the occupation of the user. owner!=null
-     * @param username is the nickname for the UserApp. Username!=null, Username!=" "
-     * @return an Owner
+     * @param ownerPOJO is the pojo of owner,ownerPOJO!=null
+     * @return
      */
-    public Optional<Owner> saveOwner(Owner owner, String username) {
+    public Optional<OwnerPOJO> createOwner(OwnerPOJO ownerPOJO) {
 
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         ownerRepository = new OwnerRepositoryImpl(entityManager);
-        userAppRepository = new UserAppRepositoryImpl(entityManager);
 
-        UserApp userApp = userAppRepository.findByUsername(username).get();
-        Owner ownerDb = new Owner(owner.getOwnerId(), owner.getPersonId(), owner.getName(), owner.getAddress(), owner.getNeighborhood());
-        ownerDb.setUsername(userApp);
-        Optional<Owner> persistedOwner = ownerRepository.save(ownerDb);
+        Owner owner = new Owner(ownerPOJO.getUsername(), ownerPOJO.getPassword(), ownerPOJO.getEmail(),
+                ownerPOJO.getPersonId(), ownerPOJO.getName(), ownerPOJO.getAddress(), ownerPOJO.getNeighborhood());
+        Optional<Owner> persistedOwner = ownerRepository.save(owner);
 
         entityManager.close();
         entityManagerFactory.close();
 
-        return persistedOwner;
+        if (persistedOwner.isPresent()) {
+            return Optional.of(new OwnerPOJO(persistedOwner.get().getUsername(),
+                    persistedOwner.get().getPassword(),
+                    persistedOwner.get().getEmail(),
+                    persistedOwner.get().getPersonId(),
+                    persistedOwner.get().getName(),
+                    persistedOwner.get().getAddress(),
+                    persistedOwner.get().getNeighborhood()));
+        } else {
+            return Optional.empty();
+        }
+
     }
 
     /**
@@ -86,13 +95,13 @@ public class OwnerService {
      *
      * @param owner is the occupation of the user. owner!=null
      */
-    public void updateOwner(Owner owner) {
+    public void updateOwner(String username,Owner owner) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         ownerRepository = new OwnerRepositoryImpl(entityManager);
-        ownerRepository.updateByUsername(owner.getName(), owner.getAddress(), owner.getNeighborhood(), owner.getUsername().getUsername(), owner.getPersonId());
+        ownerRepository.updateByUsername(username, owner.getPassword(), owner.getEmail(), owner.getPersonId(), owner.getName(), owner.getAddress(), owner.getNeighborhood());
 
         entityManager.close();
         entityManagerFactory.close();

@@ -8,15 +8,15 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 
-@Path("/vets/{vet_id}/visits")
+@Path("/vets/{username}/visits")
 public class VisitResource {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response create(@PathParam("vet_id") Integer vetId, Visit visit) {
+    public Response create(@PathParam("username") String username, Visit visit) {
         VisitService visitService = new VisitService();
-        visitService.saveVisit(vetId, visit);
+        visitService.saveVisit(username, visit);
 
         return Response.status(Response.Status.CREATED)
                 .entity(visit).build();

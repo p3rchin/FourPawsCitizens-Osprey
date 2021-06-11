@@ -8,22 +8,9 @@ import java.util.List;
  * Creating vet with constructor and Getters and Setters
  */
 @Entity
-@Table(name = "Vet") // Optional
-@NamedQueries({
-        @NamedQuery(name = "Vet.findByName",
-                query = "SELECT a FROM Vet a WHERE a.username = :username")
-})
-public class Vet {
-
-
-    @Id
-    @GeneratedValue
-    @Column(name = "vet_id", unique = true)
-    private Integer vetId;
-
-    @OneToOne
-    @JoinColumn(name = "username")
-    private UserApp username;
+@Table(name = "Vet")
+@PrimaryKeyJoinColumn
+public class Vet extends UserApp {
 
     @Column(name = "name")
     private String name;
@@ -35,7 +22,7 @@ public class Vet {
     private String neighborhood;
 
 
-    @OneToMany(mappedBy = "vet", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "username", cascade = CascadeType.ALL)
     private List<Visit> visits = new ArrayList<>();
 
     /**
@@ -48,53 +35,18 @@ public class Vet {
     /**
      * Creating an specific constructor
      *
-     * @param vetId        is the id od the vet, vetId!= null, vetId!= " "
-     * @param username     is the username that was created by the program . username!= null, username!= " "
+     * @param username     is the name that was created by the program . username!= null, username!= " "
+     * @param password     is the key that has the user that open the program. password != null, username!=" "
+     * @param email        is the @ that has the user. email != null, email != " "
      * @param name         is the name for the vet. name != null, name !=" "
      * @param address      is the location for the house. address!= null, address!=" "
      * @param neighborhood where the vet is located. neighborhood != null ,neighborhood != " "
      */
-    public Vet(Integer vetId, UserApp username, String name, String address, String neighborhood) {
-        this.vetId = vetId;
-        this.username = username;
+    public Vet(String username, String password, String email, String name, String address, String neighborhood) {
+        super(username, password, email, "vet");
         this.name = name;
         this.address = address;
         this.neighborhood = neighborhood;
-    }
-    /**
-     * Creating an specific constructor
-     *
-     * @param vetId        is the id od the vet, vetId!= null, vetId!= " "
-     * @param name         is the name for the vet. name != null, name !=" "
-     * @param address      is the location for the house. address!= null, address!=" "
-     * @param neighborhood where the vet is located. neighborhood != null ,neighborhood != " "
-     */
-    public Vet(Integer vetId, String name, String address, String neighborhood) {
-        this.vetId = vetId;
-        this.name = name;
-        this.address = address;
-        this.neighborhood = neighborhood;
-    }
-
-    /**
-     * Creating an specific constructor
-     *
-     * @param name         is the name for the vet. name != null, name !=" "
-     * @param address      is the location for the house. address!= null, address!=" "
-     * @param neighborhood where the vet is located. neighborhood != null ,neighborhood != " "
-     */
-    public Vet(String name, String address, String neighborhood) {
-        this.name = name;
-        this.address = address;
-        this.neighborhood = neighborhood;
-    }
-
-    public UserApp getUsername() {
-        return username;
-    }
-
-    public void setUsername(UserApp username) {
-        this.username = username;
     }
 
     public String getName() {
@@ -121,16 +73,8 @@ public class Vet {
         this.neighborhood = neighborhood;
     }
 
-    public Integer getVetId() {
-        return vetId;
-    }
-
-    public void setVetId(Integer vetId) {
-        this.vetId = vetId;
-    }
-
     public void addVisit(Visit visit) {
         visits.add(visit);
-        visit.setVet(this);
+        visit.setUsername(this);
     }
 }

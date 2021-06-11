@@ -42,8 +42,8 @@ public class Pet {
     private String picture;
 
     @ManyToOne
-    @JoinColumn(name = "owner_id")
-    private Owner owner;
+    @JoinColumn(name = "username")
+    private Owner username;
 
     @OneToMany(mappedBy = "pet", cascade = CascadeType.ALL)
     private List<PetCase> cases = new ArrayList<>();
@@ -71,7 +71,7 @@ public class Pet {
      * @param picture   is the image for the pet.
      * @param owner     is the id for the owner.
      */
-    public Pet(Integer petId, String microchip, String name, String species, String race, String size, String sex, String picture, Owner owner) {
+    public Pet(Integer petId, String microchip, String name, String species, String race, String size, String sex, String picture, Owner username) {
         this.petId = petId;
         this.microchip = microchip;
         this.name = name;
@@ -80,7 +80,7 @@ public class Pet {
         this.size = size;
         this.sex = sex;
         this.picture = picture;
-        this.owner = owner;
+        this.username = username;
 
     }
 
@@ -191,12 +191,27 @@ public class Pet {
         this.petId = petId;
     }
 
-    public Owner getOwner() {
-        return owner;
+    public Owner getUsername() {
+        return username;
+    }
+    public void setUsername(Owner username) {
+        this.username = username;
     }
 
-    public void setOwner(Owner owner) {
-        this.owner = owner;
+    public List<PetCase> getCases() {
+        return cases;
+    }
+
+    public void setCases(List<PetCase> cases) {
+        this.cases = cases;
+    }
+
+    public List<Visit> getVisits() {
+        return visits;
+    }
+
+    public void setVisits(List<Visit> visits) {
+        this.visits = visits;
     }
 
     public Integer getPetId() {

@@ -7,12 +7,9 @@ import javax.persistence.*;
  */
 
 @Entity
-@Table(name = "UserApp") // Optional
-@NamedQueries({
-        @NamedQuery(name = "UserApp.findByName",
-                query = "SELECT a FROM UserApp a WHERE a.username = :username")
-})
-public class UserApp {
+@Table(name = "UserApp")
+@Inheritance(strategy = InheritanceType.JOINED)
+public abstract class UserApp {
 
     @Id
     @Column(name = "username")
@@ -26,15 +23,6 @@ public class UserApp {
 
     @Column(name = "role")
     private String role;
-
-    @OneToOne(mappedBy = "username", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private Official official;
-
-    @OneToOne(mappedBy = "username", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private Owner owner;
-
-    @OneToOne(mappedBy = "username", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private Vet vet;
 
 
     /**
@@ -90,29 +78,6 @@ public class UserApp {
         this.role = role;
     }
 
-    public Official getOfficial() {
-        return official;
-    }
-
-    public void setOfficial(Official official) {
-        this.official = official;
-    }
-
-    public Owner getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Owner owner) {
-        this.owner = owner;
-    }
-
-    public Vet getVet() {
-        return vet;
-    }
-
-    public void setVet(Vet vet) {
-        this.vet = vet;
-    }
 
     /**
      * Creating an usserAp
