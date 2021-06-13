@@ -167,6 +167,14 @@
                     <p>You will have access to the information</p>
                  </div>
               </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                 <div class="service-box">
+                    <a href="updateInfoOwner.jsp"><img src="icon/iconeditvet.png"/></a>
+                    <h3>Update information</h3>
+                    <p>You can modify and update your data</p>
+                 </div>
+              </div>
+
            </div>
         </div>
      </div>
