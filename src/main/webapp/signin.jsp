@@ -190,7 +190,7 @@
    </footr>
    <!-- end footer -->
      <!-- end footer -->
-     <!-- Javascript files--> 
+     <!-- Javascript files-->
 
     <script>
 
@@ -198,12 +198,24 @@
 
         formulario.addEventListener('submit', function (e){
             e.preventDefault();
+            console.log('me diste un click')
 
             var datos = new FormData(formulario);
 
-            fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/signup.jsp/owners', {
-                method: 'POST',
-                body: datos,
+            // console.log(datos.get('name'))
+            // console.log(datos.get('sex'))
+            // console.log(datos.get('Race'))
+            // console.log(datos.get('size'))
+            // console.log(datos.get('species'))
+            // console.log(datos.get('picture'))
+            // console.log(datos.get('microchip'))
+
+            fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/owners', {
+                method: 'GET',
+                Authorization: JSON.stringify({
+                    Username: 'Juan',
+                    Password: '123',
+                }),
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
                 },
@@ -211,7 +223,6 @@
                 .then((response) => response.json())
                 .then((json) => console.log(json));
         });
-
 
     </script>
 

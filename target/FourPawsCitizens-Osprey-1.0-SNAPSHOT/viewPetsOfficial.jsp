@@ -166,7 +166,7 @@
 
 <!-- Javascript files-->
 <script>
-    fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/pets/total/perro')
+    fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/pets/total')
         .then((response) => response.json())
         .then(data => mostrarData(data));
     const mostrarData = (data) =>{
