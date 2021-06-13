@@ -1,11 +1,9 @@
 package co.edu.unbosque.FourPawsCitizens_Osprey.resources;
 
-import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Official;
 import co.edu.unbosque.FourPawsCitizens_Osprey.resources.filters.Logged;
 import co.edu.unbosque.FourPawsCitizens_Osprey.resources.pojos.OfficialPOJO;
-import co.edu.unbosque.FourPawsCitizens_Osprey.resources.pojos.UserAppPOJO;
 import co.edu.unbosque.FourPawsCitizens_Osprey.services.OfficialService;
-import co.edu.unbosque.FourPawsCitizens_Osprey.services.UserAppService;
+
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

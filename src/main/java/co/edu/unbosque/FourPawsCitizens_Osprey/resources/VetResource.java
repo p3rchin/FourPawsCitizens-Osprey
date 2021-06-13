@@ -16,7 +16,7 @@ import java.util.Optional;
  * Creating the VetLoginResource with @Path, @Get and @Post notation
  */
 @Path("/vets")
-public class VetLoginResource {
+public class VetResource {
 
     /**
      * This operation of Restful obtain the vet logged

@@ -59,7 +59,7 @@ public class OfficialService {
      */
     public Optional<OfficialPOJO> createofficial(OfficialPOJO officialPOJO) {
 
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         officialRepository = new OfficialRepositoryImpl(entityManager);

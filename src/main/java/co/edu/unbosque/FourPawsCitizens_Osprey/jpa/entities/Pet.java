@@ -69,7 +69,7 @@ public class Pet {
      * @param size      is the size of the pet. size!=null, size!=" "
      * @param sex       is the sex od the pet . sex!=null, sex!= " "
      * @param picture   is the image for the pet.
-     * @param owner     is the id for the owner.
+     * @param username  is the nickname for the owner.
      */
     public Pet(Integer petId, String microchip, String name, String species, String race, String size, String sex, String picture, Owner username) {
         this.petId = petId;
@@ -194,6 +194,7 @@ public class Pet {
     public Owner getUsername() {
         return username;
     }
+
     public void setUsername(Owner username) {
         this.username = username;
     }

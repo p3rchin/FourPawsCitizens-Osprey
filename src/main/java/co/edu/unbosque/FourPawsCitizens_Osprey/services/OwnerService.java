@@ -64,7 +64,7 @@ public class OwnerService {
      */
     public Optional<OwnerPOJO> createOwner(OwnerPOJO ownerPOJO) {
 
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         ownerRepository = new OwnerRepositoryImpl(entityManager);

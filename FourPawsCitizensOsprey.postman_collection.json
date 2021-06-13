@@ -1,0 +1,495 @@
+{
+	"info": {
+		"_postman_id": "74d349eb-cacd-4e56-8fba-6552ab6d7869",
+		"name": "FourPawsCitizensOsprey",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Owner",
+			"item": [
+				{
+					"name": "create an owner",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "onetwo",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "focus",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"username\": \"josue\",\r\n        \"password\": \"twoone\",\r\n        \"email\": \"josue@tres\",\r\n        \"name\":\"solano\",\r\n        \"personId\":23234512,\r\n        \"address\": \"carrera 45\",\r\n        \"neighborhood\": \"santa lucia\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/owners",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"FourPawsCitizens-Osprey-1.0-SNAPSHOT",
+								"api",
+								"owners"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "auth to owner",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "onetwo",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "focus",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/owners",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"FourPawsCitizens-Osprey-1.0-SNAPSHOT",
+								"api",
+								"owners"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update an owner",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"robinsion@tres\",\r\n        \"name\":\"solano\",\r\n        \"personId\":765434567,\r\n        \"address\": \"carrera 45\",\r\n        \"neighborhood\": \"santa lucia\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/owners/focus",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"FourPawsCitizens-Osprey-1.0-SNAPSHOT",
+								"api",
+								"owners",
+								"focus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "owners total",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/owners/total/Fabian",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"FourPawsCitizens-Osprey-1.0-SNAPSHOT",
+								"api",
+								"owners",
+								"total",
+								"Fabian"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Official",
+			"item": [
+				{
+					"name": "create an official",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"username\": \"ricaldo\",\r\n        \"password\": \"maraca\",\r\n        \"email\": \"richie@fres\",\r\n        \"name\":\"ricaldo\"\r\n       \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/officials",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"FourPawsCitizens-Osprey-1.0-SNAPSHOT",
+								"api",
+								"officials"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "auth to official",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "maraca",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "ricaldo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/officials",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"FourPawsCitizens-Osprey-1.0-SNAPSHOT",
+								"api",
+								"officials"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vet",
+			"item": [
+				{
+					"name": "create a vet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"username\": \"rojitas\",\r\n        \"password\": \"yesvery\",\r\n        \"email\": \"guell@fres\",\r\n        \"name\":\"juan\",\r\n        \"address\":\"calle 56\",\r\n        \"neighborhood\":\"chico\"\r\n       \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/vets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"FourPawsCitizens-Osprey-1.0-SNAPSHOT",
+								"api",
+								"vets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "auth to vet",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "yesvery",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "rojitas",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/vets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"FourPawsCitizens-Osprey-1.0-SNAPSHOT",
+								"api",
+								"vets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vets total",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Visit",
+			"item": [
+				{
+					"name": "create a visit",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "dingdong",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "reposao",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"created_at\": \"14/02/2019\",\r\n        \"type\": \"corte\",\r\n        \"description\": \"esta largo su pelo\",\r\n        \"pet\":{\r\n            \"petId\":8\r\n        }\r\n    }\r\n    ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/vets/reposao/visits",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"FourPawsCitizens-Osprey-1.0-SNAPSHOT",
+								"api",
+								"vets",
+								"reposao",
+								"visits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "visit total",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/visits/total/reposao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"FourPawsCitizens-Osprey-1.0-SNAPSHOT",
+								"api",
+								"visits",
+								"total",
+								"reposao"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pet",
+			"item": [
+				{
+					"name": "create a pet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"name\": \"felicia\",\r\n        \"sex\": \"hembra\",\r\n        \"race\":\"persa\",\r\n        \"size\":\"grande\",\r\n        \"species\":\"gato\",\r\n        \"picture\": \"carrera 45\",\r\n        \"microchip\": \"5654323\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/owners/focus/pets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"FourPawsCitizens-Osprey-1.0-SNAPSHOT",
+								"api",
+								"owners",
+								"focus",
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pets total",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/pets/total/perro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"FourPawsCitizens-Osprey-1.0-SNAPSHOT",
+								"api",
+								"pets",
+								"total",
+								"perro"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Petcase",
+			"item": [
+				{
+					"name": "create a petcases",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"created_at\": \"31/10/2019\",\r\n        \"type\": \"perdida\",\r\n        \"description\":\"se perdio\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/pets/12/petcases",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"FourPawsCitizens-Osprey-1.0-SNAPSHOT",
+								"api",
+								"pets",
+								"12",
+								"petcases"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "petcases total",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/petcases/total/perdida",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"FourPawsCitizens-Osprey-1.0-SNAPSHOT",
+								"api",
+								"petcases",
+								"total",
+								"perdida"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

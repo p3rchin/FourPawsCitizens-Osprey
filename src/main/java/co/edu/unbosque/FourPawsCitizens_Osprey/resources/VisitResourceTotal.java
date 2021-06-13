@@ -1,8 +1,6 @@
 package co.edu.unbosque.FourPawsCitizens_Osprey.resources;
 
-import co.edu.unbosque.FourPawsCitizens_Osprey.resources.pojos.PetCasePOJO;
 import co.edu.unbosque.FourPawsCitizens_Osprey.resources.pojos.VisitPOJO;
-import co.edu.unbosque.FourPawsCitizens_Osprey.services.PetCaseService;
 import co.edu.unbosque.FourPawsCitizens_Osprey.services.VisitService;
 
 import javax.ws.rs.GET;
@@ -18,7 +16,7 @@ import java.util.List;
  * Creating the resource of VisitTotal with @Path and  @Get notation
  */
 
-@Path("/visits/total/{param}")
+@Path("/visits/total/{username}")
 public class VisitResourceTotal {
 
     /**
@@ -30,12 +28,12 @@ public class VisitResourceTotal {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response total(@PathParam("param") String param) {
+    public Response total(@PathParam("username")String param) {
 
         List<VisitPOJO> visits = new VisitService().listVisit();
         List<VisitPOJO> visitsParam = new ArrayList<>();
         for (int i = 0; i < visits.size(); i++) {
-            if (param.equals(param.equals(visits.get(i).getUsername()) || param.equals(visits.get(i).getVisitId()) || param.equals(visits.get(i).getCreatedAt()) || param.equals(visits.get(i).getDescription()) || param.equals(visits.get(i).getType()) || param.equals(visits.get(i).getPetId()))) {
+            if (param.equals(param.equals(visits.get(i).getUsername()))){
                 visitsParam.add(visits.get(i));
             }
         }
