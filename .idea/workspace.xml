@@ -10,6 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33576cdb-f9f2-49a4-a657-bfa9e15e0b2f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/about.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/createCaseOwner.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/homeOwner.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/registerOwner.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/signin.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/signup.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/viewPetsOwner.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/index.jsp" afterDir="false" />
     </list>

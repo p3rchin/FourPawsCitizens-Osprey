@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>lighten</title>
+    <title>Paws Citizens</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -187,7 +187,7 @@
                     </div>
                 </dir>
                 <div class="col-md-12">
-                    <a href="about.html" class="read-more">Read more</a>
+                    <a href="about.jsp" class="read-more">Read more</a>
                 </div>
             </div>
         </div>
