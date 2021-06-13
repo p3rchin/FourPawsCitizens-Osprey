@@ -79,11 +79,11 @@
                    <div class="limit-box">
                       <nav class="main-menu">
                          <ul class="menu-area-main">
-                            <li class="active"> <a href="index.jsp">Home</a> </li>
+                            <li > <a href="index.jsp">Home</a> </li>
                             <li> <a href="about.jsp">About</a> </li>
-                            <li> <a href="signup.jsp">Sign up</a> </li>
-                            
-                             
+                             <li> <a href="signupOfficial.jsp">Register official</a> </li>
+                            <li class="active"> <a href="signupOwner.jsp">Register owner</a> </li>
+                             <li> <a href="signupVet.jsp">Register vet</a> </li>
                          </ul>
                       </nav>
                    </div>
@@ -103,7 +103,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="titlepage">
-                        <h2>Sign up</h2>
+                        <h2>Sign up as an owner</h2>
                     </div>
                 </div>
             </div>
@@ -117,7 +117,7 @@
                <div class="row">
                   <dir class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                      <div class="about_box">
-                        <figure><img src="images/signup-image.png" alt="sing up image"></figure>
+                        <figure><img src="images/signup-owner.png" alt="sing up image"></figure>
                         <a href="signin.jsp">I am already member</a>
                      </div>
                 </dir>
@@ -125,18 +125,9 @@
                     <div class="about_box">
                         <h3 class="form-title">Sign up</h3>
                         <form method="POST" class="register-form" id="register-form">
-                           <div class=" col-md-12">
-                                 <p>Please select your type user:</p>
-                                 <input type="radio" id="O" name="selection" value="Owner" >
-                                 <label for="owner">Owner</label><br>
-                                 <input type="radio" id="V" name="selection" value="Vet" >
-                                 <label for="vet">Vet</label><br>
-                                 <input type="radio" id="OF" name="selection" value="Official">
-                                 <label for="officer">Officer</label>
-                          </div>
                             <div class=" col-md-12">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" class="form-control" name="name" id="name" placeholder="Your username" required="required"/>
+                                <input type="text" class="form-control" name="username" id="username" placeholder="Your username" required="required"/>
                             </div>
                             <div class=" col-md-12">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
@@ -151,6 +142,39 @@
                                 <input type="password" class="form-control" name="re_pass" id="re_pass" placeholder="Repeat your password" required="required"/>
                             </div>
                             <div class=" col-md-12">
+                                <input class="form-control" placeholder="Your name" type="text" name="name" id="name" required="required">
+                            </div>
+                            <div class=" col-md-12">
+                                <input class="form-control" placeholder="Your address" type="text" name="address" id="address" required="required">
+                            </div>
+                            <div class=" col-md-12">
+                                <select class="form-control" style="height:60px" name="neighborhood">
+                                    <option disabled="disabled" selected="selected">Select your neighborhood</option>
+                                    <option value="A. Nriño">A. Nariño</option>
+                                    <option value="B. Unidos">B. Unidos</option>
+                                    <option value="Bosa">Bosa</option>
+                                    <option value="C.Bolivar">C.Bolivar</option>
+                                    <option value="Chapinero">Chapinero</option>
+                                    <option value="Engativa">Engativa</option>
+                                    <option value="Fontibon">Fontibon</option>
+                                    <option value="Kennedy">Kennedy</option>
+                                    <option value="La candelaria">La candelaria</option>
+                                    <option value="Los martires">Los martires</option>
+                                    <option value="Municipios aledaños a Bogota D.C">Municipios aledaños a Bogota D.C</option>
+                                    <option value="P. Aranda">P. Aranda</option>
+                                    <option value="R. Uribe">R. Uribe</option>
+                                    <option value="San Cristobal">San Cristobal</option>
+                                    <option value="Santa Fe">Santa Fe</option>
+                                    <option value="Suba">Suba</option>
+                                    <option value="Sumapaz">Sumapaz</option>
+                                    <option value="Teusaquillo">Teusaquillo</option>
+                                    <option value="Tunjuelito">Tunjuelito</option>
+                                    <option value="Usaquen">Usaquen</option>
+                                    <option value="Usme">Usme</option>
+                                    <option value="Sin identificar">Sin identificar</option>
+                                </select>
+                            </div>
+                            <div class=" col-md-12">
                                 <input type="submit" name="signup" id="signup" class="send" value="Register"/>
                             </div>
                         </form>
@@ -159,8 +183,6 @@
               </div>
            </div>>
            </section>
-        
-           
 
     </div>
     <footr>
@@ -255,8 +277,6 @@
 
 
     </script>
-
-     
      <script src="js/jquery.min.js"></script> 
      <script src="js/popper.min.js"></script> 
      <script src="js/bootstrap.bundle.min.js"></script> 

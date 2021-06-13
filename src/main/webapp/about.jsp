@@ -77,7 +77,7 @@
                            <ul class="menu-area-main">
                               <li> <a href="index.html">Home</a> </li>
                               <li class="active"> <a href="about.jsp">About</a></li>
-                              <li> <a href="signup.jsp">Sign up</a> </li>
+                              <li> <a href="signupOwner.jsp">Sign up</a> </li>
                                
                            </ul>
                         </nav>
