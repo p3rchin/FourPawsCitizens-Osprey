@@ -1,5 +1,6 @@
 package co.edu.unbosque.FourPawsCitizens_Osprey.services;
 
+import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Pet;
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Vet;
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Visit;
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.*;
@@ -21,6 +22,7 @@ public class VisitService {
 
     VisitRepository visitRepository;
     VetRepository vetRepository;
+    PetRepository petRepository;
 
     /**
      * Creating method listVisit
@@ -53,19 +55,23 @@ public class VisitService {
      * @param visit is the visit for a pet created by a vet. visit!=null
      * @return an visit
      */
-    public void saveVisit(String username, Visit visit) {
+    public void saveVisit(String username, Visit visit, Integer petId) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         vetRepository = new VetRepositoryImpl(entityManager);
         visitRepository = new VisitRepositoryImpl(entityManager);
+        petRepository = new PetRepositoryImpl(entityManager);
 
         Optional<Vet> vet = vetRepository.findByUsername(username);
         Vet vet1 = vet.get();
+        Optional<Pet> pet = petRepository.fyndById(petId);
+        Pet pet1 = pet.get();
         vet.ifPresent(a -> {
-            Visit visitDb = new Visit(visit.getVisit_id(), visit.getCreated_at(), visit.getType(), visit.getDescription(), visit.getPet());
+            Visit visitDb = new Visit(visit.getVisit_id(), visit.getCreated_at(), visit.getType(), visit.getDescription());
             visitDb.setUsername(vet1);
+            visitDb.setPet(pet1);
             a.addVisit(visitDb);
             vetRepository.save(a);
         });

@@ -223,4 +223,8 @@ public class Pet {
         cases.add(petCase);
         petCase.setPet(this);
     }
+    public void addVisit(Visit visit) {
+        visits.add(visit);
+        visit.setPet(this);
+    }
 }

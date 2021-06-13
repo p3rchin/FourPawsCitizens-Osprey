@@ -127,16 +127,16 @@
                         <form method="POST" class="register-form" id="register-form">
                            <div class=" col-md-12">
                                  <p>Please select your type user:</p>
-                                 <input type="radio" id="O" name="owner" value="O" required="required">
+                                 <input type="radio" id="O" name="selection" value="Owner" >
                                  <label for="owner">Owner</label><br>
-                                 <input type="radio" id="V" name="vet" value="V" required="required">
+                                 <input type="radio" id="V" name="selection" value="Vet" >
                                  <label for="vet">Vet</label><br>
-                                 <input type="radio" id="OF" name="officer" value="OF" required="required">
+                                 <input type="radio" id="OF" name="selection" value="Official">
                                  <label for="officer">Officer</label>
                           </div>
                             <div class=" col-md-12">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" class="form-control" name="name" id="name" placeholder="Your name" required="required"/>
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Your username" required="required"/>
                             </div>
                             <div class=" col-md-12">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
@@ -203,7 +203,58 @@
    </footr>
      <!-- end footer -->
      <!-- end footer -->
-     <!-- Javascript files--> 
+     <!-- Javascript files-->
+
+    <script>
+
+        var formulario = document.getElementById('register-form');
+
+        formulario.addEventListener('submit', function (e){
+            e.preventDefault();
+            console.log('me diste un click')
+
+            var datos = new FormData(formulario);
+
+            console.log(datos.get('selection'))
+            console.log(datos.get('name'))
+            console.log(datos.get('email'))
+            console.log(datos.get('pass'))
+
+            if(datos.get('selection') == 'Owner'){
+
+                fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/owners', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        username: datos.get('name'),
+                        password: datos.get('pass'),
+                        email: datos.get('email'),
+                        name: 'Perchin',
+                        personId:12345,
+                        address: 'carrera 3',
+                        neighborhood: 'funzita'
+                    }),
+                    headers: {
+                        'Content-type': 'application/json; charset=UTF-8',
+                    },
+                })
+                    .then((response) => response.json())
+                    .then((json) => console.log(json));
+            }
+
+            if(datos.get('selection') == 'Vet'){
+
+            }
+
+            if(datos.get('selection') == 'Official'){
+
+            }
+
+
+
+        });
+
+
+    </script>
 
      
      <script src="js/jquery.min.js"></script> 

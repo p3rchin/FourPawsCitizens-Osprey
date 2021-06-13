@@ -192,7 +192,29 @@
      <!-- end footer -->
      <!-- Javascript files--> 
 
-     
+    <script>
+
+        var formulario = document.getElementById('login-form');
+
+        formulario.addEventListener('submit', function (e){
+            e.preventDefault();
+
+            var datos = new FormData(formulario);
+
+            fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/signup.jsp/owners', {
+                method: 'POST',
+                body: datos,
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            })
+                .then((response) => response.json())
+                .then((json) => console.log(json));
+        });
+
+
+    </script>
+
      <script src="js/jquery.min.js"></script> 
      <script src="js/popper.min.js"></script> 
      <script src="js/bootstrap.bundle.min.js"></script> 
