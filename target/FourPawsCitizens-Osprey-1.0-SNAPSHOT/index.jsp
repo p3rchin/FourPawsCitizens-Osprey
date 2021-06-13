@@ -2,33 +2,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>FourPetCitizens</title>
+
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
     <!-- basic -->
-    <meta charset="utf-8">
+    <meta content="text/html" charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- mobile metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>lighten</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- bootstrap css -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
     <!-- style css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
     <!-- Responsive-->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="../css/responsive.css">
     <!-- fevicon -->
-    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <link rel="icon"  href="../images/fevicon.png" type="image/gif" />
     <!-- Scrollbar Custom CSS -->
-    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/jquery.mCustomScrollbar.min.css">
     <!-- Tweaks for older IEs-->
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <script type="text/javascript" src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script type="text/javascript" src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 </head>
 <!-- body -->
 <body class="main-layout">
@@ -167,27 +174,27 @@
                 </dir>
                 <dir class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                     <div class="for_box">
-                        <i><img src="icon/icon2.png"/></i>
+                        <i><img  type="image" src="icon/icon2.png"/></i>
                         <h3>Report a case</h3>
                         <p>You will have the possibility to describe a specific case of a pet</p>
                     </div>
                 </dir>
                 <dir class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                     <div class="for_box">
-                        <i><img src="icon/icon3.png"/></i>
+                        <i><img type="image" src="icon/icon3.png"/></i>
                         <h3>View your pet's information</h3>
                         <p>You will be able to filter the information of your pets through a personalized table</p>
                     </div>
                 </dir>
                 <dir class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                     <div class="for_box">
-                        <i><img src="icon/icon4.png"/></i>
+                        <i><img type="image" src="icon/icon4.png"/></i>
                         <h3>Register your pet</h3>
                         <p>You will have a personalized space to enter your pet's information</p>
                     </div>
                 </dir>
                 <div class="col-md-12">
-                    <a href="about.html" class="read-more">Read more</a>
+                    <a href="about.jsp" class="read-more">Read more</a>
                 </div>
             </div>
         </div>
@@ -216,7 +223,7 @@
                     <div class="container">
                         <div class="carousel-caption text-bg">
                             <div class="img_bg">
-                                <i><img src="images/client1.png"/><span>Felipe Rojas<br><strong class="date">12/04/2021</strong></span></i>
+                                <i><img type="image" src="images/client1.png"/><span>Felipe Rojas<br><strong class="date">12/04/2021</strong></span></i>
 
                             </div>
 
@@ -229,7 +236,7 @@
                     <div class="container">
                         <div class="carousel-caption text-bg">
                             <div class="img_bg">
-                                <i><img src="images/client2.png"/><span>Robinson Gutiérrez<br><strong class="date">08/06/2021</strong></span></i>
+                                <i><img  type="image" src="images/client2.png"/><span>Robinson Gutiérrez<br><strong class="date">08/06/2021</strong></span></i>
 
                             </div>
                             <p>
@@ -242,7 +249,7 @@
                     <div class="container">
                         <div class="carousel-caption text-bg">
                             <div class="img_bg">
-                                <i><img src="images/client3.png"/><span>Felipe Ladino<br><strong class="date">12/06/2021</strong></span></i>
+                                <i><img type="image" src="images/client3.png"/><span>Felipe Ladino<br><strong class="date">12/06/2021</strong></span></i>
 
                             </div>
                             <p>Always available and friendly. The best care for our pets every time. They offer an estimate before the services so you can choose "now or later" the prices are very reasonable.</p>
@@ -313,15 +320,15 @@
 </footr>
 <!-- end footer -->
 <!-- Javascript files-->
-<script src="js/jquery.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/jquery-3.0.0.min.js"></script>
-<script src="js/plugin.js"></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/popper.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../js/plugin.js"></script>
 <!-- sidebar -->
-<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="js/custom.js"></script>
-<script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="../js/custom.js"></script>
+<script type="text/javascript" src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 <script>
     $(document).ready(function(){
         $(".fancybox").fancybox({
