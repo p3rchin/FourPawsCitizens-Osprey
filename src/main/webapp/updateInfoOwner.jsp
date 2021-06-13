@@ -117,6 +117,10 @@
                     <form class="main_form" class="register-form" id="register-form">
                         <div class="row">
                             <div class=" col-md-12">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email"  class="form-control"name="email" id="email" placeholder="Your email" required="required"/>
+                            </div>
+                            <div class=" col-md-12">
                                 <input class="form-control" placeholder="Your ID" type="number" name="id" id="id" required="required">
                             </div>
                             <div class=" col-md-12">
@@ -214,24 +218,20 @@
         var datos = new FormData(formulario);
 
 
+        console.log(datos.get('email'))
         console.log(datos.get('name'))
-        console.log(datos.get('sex'))
-        console.log(datos.get('Race'))
-        console.log(datos.get('size'))
-        console.log(datos.get('species'))
-        console.log(datos.get('picture'))
-        console.log(datos.get('microchip'))
+        console.log(datos.get('id'))
+        console.log(datos.get('address'))
+        console.log(datos.get('neighborhood'))
 
-        fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/owners/focus/pets', {
-            method: 'POST',
+        fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/owners/focus', {
+            method: 'PUT',
             body: JSON.stringify({
-                name: datos.get('name'),
-                sex: datos.get('sex'),
-                race: datos.get('Race'),
-                size: datos.get('size'),
-                species: datos.get('species'),
-                picture: 'image.png',
-                microchip: datos.get('microchip')
+                email: datos.get('email'),
+                name:datos.get('name'),
+                personId:datos.get('id'),
+                address: datos.get('address'),
+                neighborhood: datos.get('neighborhood')
             }),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',

@@ -117,6 +117,9 @@
           <form class="main_form" class="register-form" id="register-form">
             <div class="row">
               <div class=" col-md-12">
+                <input class="form-control" type="text" placeholder="Created" name="created" id="created">
+              </div>
+              <div class=" col-md-12">
                 <input class="form-control" placeholder="Type" type="text" name="type" id="type">
               </div>
               <div class=" col-md-12">
@@ -208,17 +211,16 @@
 
     var datos = new FormData(formulario);
 
-
     console.log(datos.get('created'))
     console.log(datos.get('type'))
     console.log(datos.get('description'))
 
-    fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/pets/12/petcases', {
+    fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/vets/rojitas&12/visits', {
       method: 'POST',
       body: JSON.stringify({
         created_at: datos.get('created'),
         type: datos.get('type'),
-        description:datos.get('description')
+        description: datos.get('description')
       }),
       headers: {
         'Content-type': 'application/json; charset=UTF-8',

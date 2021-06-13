@@ -10,23 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33576cdb-f9f2-49a4-a657-bfa9e15e0b2f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/createVisitVet.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/homeVet.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/icon/iconcreatvisit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/icon/iconeditvet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/icon/vet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/addvisit.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/banner6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/banner7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/banner8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/signup-image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/updateVet.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/updateInfoOwner.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/updateInfoVet.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/viewInfoVet.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/homeOwner.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/homeOwner.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/createVisitVet.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/createVisitVet.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/updateInfoOwner.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/updateInfoOwner.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,16 +43,16 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/webapp/homeVet.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/webapp/createVisitVet.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/webapp/signupOfficial.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/webapp/viewPetsOwner.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/webapp/createCaseOwner.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/webapp/signupVet.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/webapp/registerOwner.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/webapp/homeOwner.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/webapp/updateInfoVet.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/signupOfficial.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/webapp/signupOwner.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/signupVet.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/createVisitVet.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/updateInfoVet.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/homeVet.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/homeOwner.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/registerOwner.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1tbAJpKyT0VnTMZJ6KQ07b71dhE" />
   <component name="ProjectLevelVcsManager">
@@ -97,17 +84,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="JBoss 23.0.1.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 23.0.1.Final" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
@@ -284,6 +260,7 @@
       <workItem from="1623565845998" duration="2098000" />
       <workItem from="1623568253787" duration="6048000" />
       <workItem from="1623575027608" duration="2438000" />
+      <workItem from="1623577778506" duration="1744000" />
     </task>
     <servers />
   </component>
