@@ -1,6 +1,5 @@
 package co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories;
 
-import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Owner;
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Vet;
 
 import javax.persistence.EntityManager;
@@ -44,7 +43,6 @@ public class VetRepositoryImpl implements VetRepository {
     }
 
 
-
     /**
      * Creating method save the Vet
      *
@@ -62,4 +60,33 @@ public class VetRepositoryImpl implements VetRepository {
         }
         return Optional.empty();
     }
+
+    /**
+     *  Creating method to udpdate an Owner
+     * @param username is the username of the vet. Username!=null, Username!=" "
+     * @param password     is the key that has the user that open the program. password != null, username!=" "
+     * @param email        is the @ that has the user. email != null, email != " "
+     * @param name         is the name of the vet. name!=null, name!=" "
+     * @param address      is the addres of the vet. address!=null, address!=" "
+     * @param neighborhood is the neighborhood. neighborhood!=null, neighborhood!=" "
+     */
+    @Override
+    public void updateByUsername(String username, String password, String email, String name, String address, String neighborhood) {
+        Vet vet = entityManager.find(Vet.class, username);
+        if (vet != null) {
+            try {
+                entityManager.getTransaction().begin();
+                vet.setPassword(password);
+                vet.setEmail(email);
+                vet.setName(name);
+                vet.setAddress(address);
+                vet.setNeighborhood(neighborhood);
+                entityManager.merge(vet);
+                entityManager.getTransaction().commit();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
+

@@ -1,11 +1,9 @@
 package co.edu.unbosque.FourPawsCitizens_Osprey.services;
 
+import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Owner;
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.UserApp;
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Vet;
-import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.UserAppRepository;
-import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.UserAppRepositoryImpl;
-import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.VetRepository;
-import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.VetRepositoryImpl;
+import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.*;
 import co.edu.unbosque.FourPawsCitizens_Osprey.resources.pojos.VetPOJO;
 
 import javax.ejb.Stateless;
@@ -84,6 +82,19 @@ public class VetService {
         } else {
             return Optional.empty();
         }
+
+    }
+
+    public void updateVet(String username, Vet vet) {
+
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        vetRepository = new VetRepositoryImpl(entityManager);
+        vetRepository.updateByUsername(username, vet.getPassword(), vet.getEmail(), vet.getName(), vet.getAddress(), vet.getNeighborhood());
+
+        entityManager.close();
+        entityManagerFactory.close();
 
     }
 

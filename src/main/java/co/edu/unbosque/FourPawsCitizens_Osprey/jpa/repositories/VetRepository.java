@@ -36,4 +36,17 @@ public interface VetRepository {
      */
     Optional<Vet> save(Vet Vet);
 
+    /**
+     * Creating method to udpdate an Owner
+     *
+     * @param username     is the username of the owner. Username!=null, Username!=" "
+     * @param password     is the key that has the user that open the program. password != null, username!=" "
+     * @param email        is the @ that has the user. email != null, email != " "
+     * @param name         is the name of the owner. name!=null, name!=" "
+     * @param address      is the addres of the owner. address!=null, address!=" "
+     * @param neighborhood is the neighborhood. neighborhood!=null, neighborhood!=" "
+     */
+    void updateByUsername(String username, String password, String email, String name, String address, String neighborhood);
+
+
 }
