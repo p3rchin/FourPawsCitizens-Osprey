@@ -227,6 +227,45 @@
 <!-- end footer -->
 <!-- Javascript files-->
 
+<script>
+
+    var formulario = document.getElementById('register-form');
+
+    formulario.addEventListener('submit', function (e){
+        e.preventDefault();
+        console.log('me diste un click')
+
+        var datos = new FormData(formulario);
+
+
+        console.log(datos.get('username'))
+        console.log(datos.get('pass'))
+        console.log(datos.get('email'))
+        console.log(datos.get('name'))
+        console.log(datos.get('address'))
+        console.log(datos.get('neighborhood'))
+
+        fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/vets', {
+            method: 'POST',
+            body: JSON.stringify({
+                username: datos.get('username'),
+                password: datos.get('pass'),
+                email: datos.get('email'),
+                name: datos.get('name'),
+                address: datos.get('address'),
+                neighborhood: datos.get('neighborhood')
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => response.json())
+            .then((json) => console.log(json));
+    });
+
+
+</script>
+
 <script src="js/jquery.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>

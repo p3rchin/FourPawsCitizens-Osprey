@@ -142,6 +142,9 @@
                                 <input type="password" class="form-control" name="re_pass" id="re_pass" placeholder="Repeat your password" required="required"/>
                             </div>
                             <div class=" col-md-12">
+                                <input class="form-control" placeholder="Your ID" type="number" name="id" id="id" required="required">
+                            </div>
+                            <div class=" col-md-12">
                                 <input class="form-control" placeholder="Your name" type="text" name="name" id="name" required="required">
                             </div>
                             <div class=" col-md-12">
@@ -237,23 +240,25 @@
 
             var datos = new FormData(formulario);
 
-            console.log(datos.get('selection'))
-            console.log(datos.get('name'))
-            console.log(datos.get('email'))
-            console.log(datos.get('pass'))
 
-            if(datos.get('selection') == 'Owner'){
+            console.log(datos.get('username'))
+            console.log(datos.get('pass'))
+            console.log(datos.get('email'))
+            console.log(datos.get('name'))
+            console.log(datos.get('id'))
+            console.log(datos.get('address'))
+            console.log(datos.get('neighborhood'))
 
                 fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/owners', {
                     method: 'POST',
                     body: JSON.stringify({
-                        username: datos.get('name'),
+                        username: datos.get('username'),
                         password: datos.get('pass'),
                         email: datos.get('email'),
-                        name: 'Perchin',
-                        personId:12345,
-                        address: 'carrera 3',
-                        neighborhood: 'funzita'
+                        name: datos.get('name'),
+                        personId: datos.get('id'),
+                        address: datos.get('address'),
+                        neighborhood: datos.get('neighborhood')
                     }),
                     headers: {
                         'Content-type': 'application/json; charset=UTF-8',
@@ -261,18 +266,6 @@
                 })
                     .then((response) => response.json())
                     .then((json) => console.log(json));
-            }
-
-            if(datos.get('selection') == 'Vet'){
-
-            }
-
-            if(datos.get('selection') == 'Official'){
-
-            }
-
-
-
         });
 
 

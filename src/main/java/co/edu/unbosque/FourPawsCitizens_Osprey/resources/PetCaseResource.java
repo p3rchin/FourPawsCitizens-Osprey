@@ -14,7 +14,6 @@ import java.util.Optional;
 @Path("/pets/{pet_id}/petcases")
 public class PetCaseResource {
 
-
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)

@@ -114,7 +114,7 @@
           <dir class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
               <div class="about_box">
                   <h3 class="form-title">Register a pet</h3>
-                    <form class="main_form">
+                    <form class="main_form" class="register-form" id="register-form">
                         <div class="row">
                             <div class=" col-md-12">
                                 <input class="form-control" placeholder="Microchip" type="text" name="microchip" id="microchip">
@@ -183,7 +183,50 @@
      </div>
      </footr>
  
-      <!-- Javascript files--> 
+      <!-- Javascript files-->
+
+      <script>
+
+          var formulario = document.getElementById('register-form');
+
+          formulario.addEventListener('submit', function (e){
+              e.preventDefault();
+              console.log('me diste un click')
+
+              var datos = new FormData(formulario);
+
+
+              console.log(datos.get('name'))
+              console.log(datos.get('sex'))
+              console.log(datos.get('Race'))
+              console.log(datos.get('size'))
+              console.log(datos.get('species'))
+              console.log(datos.get('picture'))
+              console.log(datos.get('microchip'))
+
+              fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/owners/focus/pets', {
+                  method: 'POST',
+                  body: JSON.stringify({
+                      name: datos.get('name'),
+                      sex: datos.get('sex'),
+                      race: datos.get('Race'),
+                      size: datos.get('size'),
+                      species: datos.get('species'),
+                      picture: 'image.png',
+                      microchip: datos.get('microchip')
+                  }),
+                  headers: {
+                      'Content-type': 'application/json; charset=UTF-8',
+                  },
+              })
+                  .then((response) => response.json())
+                  .then((json) => console.log(json));
+          });
+
+
+      </script>
+
+
       <script src="js/jquery.min.js"></script> 
       <script src="js/popper.min.js"></script> 
       <script src="js/bootstrap.bundle.min.js"></script> 

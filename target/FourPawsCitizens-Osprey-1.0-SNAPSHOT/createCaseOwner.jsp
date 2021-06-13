@@ -114,7 +114,7 @@
           <dir class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
               <div class="about_box">
                   <h3 class="form-title">Register a case</h3>
-                    <form class="main_form">
+                    <form class="main_form" class="register-form" id="register-form">
                         <div class="row">
                             <div class=" col-md-12">
                               <input class="form-control" type="text" placeholder="Created" name="created" id="created">
@@ -174,7 +174,41 @@
      </div>
      </footr>
  
-      <!-- Javascript files--> 
+      <!-- Javascript files-->
+
+      <script>
+
+          var formulario = document.getElementById('register-form');
+
+          formulario.addEventListener('submit', function (e){
+              e.preventDefault();
+              console.log('me diste un click')
+
+              var datos = new FormData(formulario);
+
+
+              console.log(datos.get('created'))
+              console.log(datos.get('type'))
+              console.log(datos.get('description'))
+
+              fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/pets/12/petcases', {
+                  method: 'POST',
+                  body: JSON.stringify({
+                      created_at: datos.get('created'),
+                      type: datos.get('type'),
+                      description:datos.get('description')
+                  }),
+                  headers: {
+                      'Content-type': 'application/json; charset=UTF-8',
+                  },
+              })
+                  .then((response) => response.json())
+                  .then((json) => console.log(json));
+          });
+
+
+      </script>
+
       <script src="js/jquery.min.js"></script> 
       <script src="js/popper.min.js"></script> 
       <script src="js/bootstrap.bundle.min.js"></script> 

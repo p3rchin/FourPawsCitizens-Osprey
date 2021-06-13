@@ -112,7 +112,7 @@
                          <th>Sex</th>
                      </tr>
                      </thead>
-                     <tbody>
+                     <tbody id="ownerTable">
                      </tbody>
                   </table>
         
@@ -157,7 +157,21 @@
      </div>
      </footr>
  
-      <!-- Javascript files--> 
+      <!-- Javascript files-->
+      <script>
+          fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/pets/total/perro')
+              .then((response) => response.json())
+              .then(data => mostrarData(data));
+          const mostrarData = (data) =>{
+              console.log(data);
+              let body = ''
+              for(let i = 0; i<data.length; i++){
+                  body+= '<tr>' + '<td>' + data[i].microchip + '</td>' + '<td>' +data[i].name + '</td>' + '<td>' + data[i].race + '</td>' + '<td>' +data[i].size + '</td>' + '<td>' +data[i].sex + '</td>' + '</tr>';
+              }
+              document.getElementById('ownerTable').innerHTML = body;
+          }
+      </script>
+
       <script src="js/jquery.min.js"></script> 
       <script src="js/popper.min.js"></script> 
       <script src="js/bootstrap.bundle.min.js"></script> 
