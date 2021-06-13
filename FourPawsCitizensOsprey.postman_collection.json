@@ -30,7 +30,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n        \"username\": \"josue\",\r\n        \"password\": \"twoone\",\r\n        \"email\": \"josue@tres\",\r\n        \"name\":\"solano\",\r\n        \"personId\":23234512,\r\n        \"address\": \"carrera 45\",\r\n        \"neighborhood\": \"santa lucia\"\r\n    }",
+							"raw": "{\r\n        \"username\": \"Ricardo\",\r\n        \"password\": \"twoone\",\r\n        \"email\": \"josue@tres\",\r\n        \"name\":\"solano\",\r\n        \"personId\":23234518,\r\n        \"address\": \"carrera 45\",\r\n        \"neighborhood\": \"santa lucia\"\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -96,7 +96,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n        \"email\": \"robinsion@tres\",\r\n        \"name\":\"solano\",\r\n        \"personId\":765434567,\r\n        \"address\": \"carrera 45\",\r\n        \"neighborhood\": \"santa lucia\"\r\n    }",
+							"raw": "{\r\n        \"email\": \"robinsion@tres\",\r\n        \"name\":\"guti\",\r\n        \"personId\":765434567,\r\n        \"address\": \"carrera 45\",\r\n        \"neighborhood\": \"santa lucia\"\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -121,7 +121,7 @@
 					"response": []
 				},
 				{
-					"name": "owners total",
+					"name": "owners filter",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -138,6 +138,28 @@
 								"owners",
 								"total",
 								"Fabian"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "owners total",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/owners/total",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"FourPawsCitizens-Osprey-1.0-SNAPSHOT",
+								"api",
+								"owners",
+								"total"
 							]
 						}
 					},
@@ -286,11 +308,78 @@
 					"response": []
 				},
 				{
+					"name": "vets filter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/vets/total/juan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"FourPawsCitizens-Osprey-1.0-SNAPSHOT",
+								"api",
+								"vets",
+								"total",
+								"juan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update a vet",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"rojis@two\",\r\n        \"name\":\"juan felipe\",\r\n        \"address\": \"carrera 66\",\r\n        \"neighborhood\": \"san fernando\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/vets/rojitas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"FourPawsCitizens-Osprey-1.0-SNAPSHOT",
+								"api",
+								"vets",
+								"rojitas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "vets total",
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/vets/total",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"FourPawsCitizens-Osprey-1.0-SNAPSHOT",
+								"api",
+								"vets",
+								"total"
+							]
+						}
 					},
 					"response": []
 				}
@@ -321,7 +410,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n        \"created_at\": \"14/02/2019\",\r\n        \"type\": \"corte\",\r\n        \"description\": \"esta largo su pelo\",\r\n        \"pet\":{\r\n            \"petId\":8\r\n        }\r\n    }\r\n    ",
+							"raw": "{\r\n        \"created_at\": \"14/02/2019\",\r\n        \"type\": \"corte de pelo\",\r\n        \"description\": \"esta largo su pelo\"\r\n       \r\n    }\r\n    ",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -329,7 +418,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/vets/reposao/visits",
+							"raw": "http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/vets/rojitas&12/visits",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -339,7 +428,7 @@
 								"FourPawsCitizens-Osprey-1.0-SNAPSHOT",
 								"api",
 								"vets",
-								"reposao",
+								"rojitas&12",
 								"visits"
 							]
 						}
@@ -347,12 +436,12 @@
 					"response": []
 				},
 				{
-					"name": "visit total",
+					"name": "visit by vet",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/visits/total/reposao",
+							"raw": "http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/visits/total/rojitas",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -363,7 +452,29 @@
 								"api",
 								"visits",
 								"total",
-								"reposao"
+								"rojitas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "visits total",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/visits/total",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"FourPawsCitizens-Osprey-1.0-SNAPSHOT",
+								"api",
+								"visits",
+								"total"
 							]
 						}
 					},
@@ -407,7 +518,7 @@
 					"response": []
 				},
 				{
-					"name": "pets total",
+					"name": "pets filter",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -424,6 +535,28 @@
 								"pets",
 								"total",
 								"perro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pets total",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/pets/total",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"FourPawsCitizens-Osprey-1.0-SNAPSHOT",
+								"api",
+								"pets",
+								"total"
 							]
 						}
 					},
@@ -467,7 +600,7 @@
 					"response": []
 				},
 				{
-					"name": "petcases total",
+					"name": "petcases filter",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -484,6 +617,28 @@
 								"petcases",
 								"total",
 								"perdida"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "petcases total",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/petcases/total",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"FourPawsCitizens-Osprey-1.0-SNAPSHOT",
+								"api",
+								"petcases",
+								"total"
 							]
 						}
 					},
