@@ -2,6 +2,14 @@
 
 Developed by Santiago Acevedo, Ricardo Cuevas, Fabián Gómez y Santiago Porras
 
+## Link del video: 
+https://youtu.be/76uhJYdSrhc
+
+### AVISO :
+
+- No se puede filtrar ni mostrar las visitas en la tabla (pero si se pueden crear las visitas)
+- En el front end por cuestion de incompatibilidad de estilos con los <select>, las listas se duplican pero no conlleva a ningun error.
+
 # Osprey_Software_Development
 ### ¿Cuáles son los tipos de usuarios que debe soportar la aplicación web?
 1) Según lo leído y analizado, y sobre las necesidades requeridas para cada usuario, se identifican 4 posibles usuarios que debe soportar nuestra aplicación web los cuales serían: los propietarios de las mascotas, ciudadanos comunes, veterinarios y funcionario público.
