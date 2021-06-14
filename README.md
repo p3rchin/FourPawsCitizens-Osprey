@@ -9,6 +9,7 @@ https://youtu.be/76uhJYdSrhc
 
 - No se puede filtrar ni mostrar las visitas en la tabla (pero si se pueden crear las visitas)
 - En el front end por cuestion de incompatibilidad de estilos con los <select>, las listas se duplican pero no conlleva a ningun error.
+- El github pages no funciona o no es compatible 
 
 ## Aviso
  
