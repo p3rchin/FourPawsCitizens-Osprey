@@ -91,7 +91,7 @@
                         <div class="limit-box">
                             <nav class="main-menu">
                                 <ul class="menu-area-main">
-                                    <li><a href="homeOfficial.jsp.jsp">Home</a></li>
+                                    <li><a href="homeOfficial.jsp">Home</a></li>
                                 </ul>
                             </nav>
                         </div>

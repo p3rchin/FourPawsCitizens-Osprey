@@ -66,7 +66,7 @@
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
                     <div class="full">
                         <div class="center-desk">
-                            <div class="logo"> <a href="homeOfficial.jsp.jsp"><img src="images/logo.png" alt="logo"/></a> </div>
+                            <div class="logo"> <a href="homeOfficial.jsp"><img src="images/logo.png" alt="logo"/></a> </div>
                         </div>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
                         <div class="limit-box">
                             <nav class="main-menu">
                                 <ul class="menu-area-main">
-                                    <li > <a href="homeOfficial.jsp.jsp">Home</a> </li>
+                                    <li > <a href="homeOfficial.jsp">Home</a> </li>
                                 </ul>
                             </nav>
                         </div>
