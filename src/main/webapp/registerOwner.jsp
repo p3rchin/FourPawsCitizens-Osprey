@@ -117,6 +117,10 @@
                     <form class="main_form" class="register-form" id="register-form">
                         <div class="row">
                             <div class=" col-md-12">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" class="form-control" name="username" id="username" placeholder="Your username" required="required"/>
+                            </div>
+                            <div class=" col-md-12">
                                 <input class="form-control" placeholder="Microchip" type="text" name="microchip" id="microchip">
                             </div>
                             <div class=" col-md-12">

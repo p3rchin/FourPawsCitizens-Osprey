@@ -10,18 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33576cdb-f9f2-49a4-a657-bfa9e15e0b2f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/LoginResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OwnerResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OwnerResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/UserAppService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/UserAppService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/signin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/signin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/updateInfoOwner.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/updateInfoOwner.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OwnerResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OwnerResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/FourPawsCitizens_Osprey/services/UserAppService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/FourPawsCitizens_Osprey/services/UserAppService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/signin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/signin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/updateInfoOwner.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/FourPawsCitizens-Osprey-1.0-SNAPSHOT/updateInfoOwner.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OwnerResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/unbosque/FourPawsCitizens_Osprey/resources/OwnerResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/unbosque/FourPawsCitizens_Osprey/services/UserAppService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/unbosque/FourPawsCitizens_Osprey/services/UserAppService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/createVisitVet.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/createVisitVet.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/updateInfoVet.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/updateInfoVet.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -282,7 +273,7 @@
       <workItem from="1623575027608" duration="2438000" />
       <workItem from="1623577778506" duration="1744000" />
       <workItem from="1623580533442" duration="707000" />
-      <workItem from="1623609983593" duration="18315000" />
+      <workItem from="1623609983593" duration="19365000" />
     </task>
     <servers />
   </component>

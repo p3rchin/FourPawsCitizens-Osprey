@@ -117,6 +117,13 @@
           <form class="main_form" class="register-form" id="register-form">
             <div class="row">
               <div class=" col-md-12">
+                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                <input type="text" class="form-control" name="username" id="username" placeholder="Your username" required="required"/>
+              </div>
+              <div class=" col-md-12">
+                <input type="text" class="form-control" name="petId" id="petId" placeholder="Your petId" required="required"/>
+              </div>
+              <div class=" col-md-12">
                 <input class="form-control" type="text" placeholder="Created" name="created" id="created">
               </div>
               <div class=" col-md-12">
