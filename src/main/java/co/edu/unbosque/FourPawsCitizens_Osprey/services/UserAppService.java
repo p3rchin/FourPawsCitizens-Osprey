@@ -1,6 +1,9 @@
 package co.edu.unbosque.FourPawsCitizens_Osprey.services;
 
+import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.Owner;
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.UserApp;
+import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.OwnerRepositoryImpl;
+import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.PetRepositoryImpl;
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.UserAppRepository;
 import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.repositories.UserAppRepositoryImpl;
 
@@ -18,7 +21,18 @@ public class UserAppService {
 
     UserAppRepository userAppRepository;
 
+    public UserApp Authorization(String username){
 
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+       userAppRepository  = new UserAppRepositoryImpl(entityManager);
+
+
+       Optional<UserApp> userApp = userAppRepository.findByUsername(username);
+
+       return userApp.get();
+    }
 
     /**
      * this method validates the UserApp

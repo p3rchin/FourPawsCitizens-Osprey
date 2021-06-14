@@ -1,6 +1,7 @@
 package co.edu.unbosque.FourPawsCitizens_Osprey.resources;
 
 
+import co.edu.unbosque.FourPawsCitizens_Osprey.jpa.entities.UserApp;
 import co.edu.unbosque.FourPawsCitizens_Osprey.resources.filters.Logged;
 import co.edu.unbosque.FourPawsCitizens_Osprey.resources.pojos.OwnerPOJO;
 import co.edu.unbosque.FourPawsCitizens_Osprey.resources.pojos.UserAppPOJO;
@@ -21,6 +22,7 @@ public class OwnerResource {
 
     /**
      * TThis operation of Restful obtain the owner logged
+     *
      * @param role is the occupation of the user. role!=null, role!=" ".
      * @return the owner logged.
      */
@@ -41,9 +43,35 @@ public class OwnerResource {
 
     }
 
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response create2(OwnerPOJO owner) {
+
+        UserApp userApp = new UserAppService().Authorization(owner.getUsername());
+
+        if (userApp != null) {
+            if (owner.getUsername().equals(userApp.getUsername()) && owner.getPassword().equals(userApp.getPassword())) {
+                return Response.status(Response.Status.CREATED)
+                        .entity(userApp.getRole()).build();
+            } else {
+                return Response.serverError()
+                        .entity("Invalid password")
+                        .build();
+            }
+        } else {
+            return Response.serverError()
+                    .entity("Username was not founded")
+                    .build();
+        }
+
+
+    }
+
     /**
      * This operation of Restful create the owner
-     * @param owner    is the occupation of the user. owner!=null
+     *
+     * @param owner is the occupation of the user. owner!=null
      * @return the object owner created.
      */
     @POST

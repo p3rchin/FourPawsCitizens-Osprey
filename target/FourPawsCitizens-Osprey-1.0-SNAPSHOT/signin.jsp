@@ -202,27 +202,42 @@
 
             var datos = new FormData(formulario);
 
-            // console.log(datos.get('name'))
-            // console.log(datos.get('sex'))
-            // console.log(datos.get('Race'))
-            // console.log(datos.get('size'))
-            // console.log(datos.get('species'))
-            // console.log(datos.get('picture'))
-            // console.log(datos.get('microchip'))
+            console.log(datos.get('your_name'))
+            console.log(datos.get('your_pass'))
 
-            fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/owners', {
-                method: 'GET',
-                Authorization: JSON.stringify({
-                    Username: 'Juan',
-                    Password: '123',
+            fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/owners/login', {
+                method: 'POST',
+                body: JSON.stringify({
+                    username: datos.get('your_name'),
+                    password: datos.get('your_pass')
                 }),
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
                 },
             })
                 .then((response) => response.json())
-                .then((json) => console.log(json));
+                .then(data => mostrarData(data));
+            const mostrarData = (data) =>{
+                console.log(data);
+
+                if(data[0] == "owner"){
+                    location.href ="./homeOwner.jsp";
+                }
+                if(data[0] == "vet"){
+                    location.href ="./homeVet.jsp";
+                }
+                if(data[0] == "official"){
+                    location.href ="./homeOfficial.jsp";
+                }
+                if(data[0] == "Invalid password"){
+                    alert("Invalid password");
+                }
+                if(data[0] == "Username was not founded"){
+                    alert("Username was not founded");
+                }
+            }
         });
+
 
     </script>
 

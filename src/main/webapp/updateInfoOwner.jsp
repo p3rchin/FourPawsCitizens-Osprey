@@ -117,6 +117,10 @@
                     <form class="main_form" class="register-form" id="register-form">
                         <div class="row">
                             <div class=" col-md-12">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" class="form-control" name="username" id="username" placeholder="Your username for updates" required="required"/>
+                            </div>
+                            <div class=" col-md-12">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
                                 <input type="email"  class="form-control"name="email" id="email" placeholder="Your email" required="required"/>
                             </div>
@@ -217,14 +221,15 @@
 
         var datos = new FormData(formulario);
 
-
+        console.log(datos.get('username'))
         console.log(datos.get('email'))
         console.log(datos.get('name'))
         console.log(datos.get('id'))
         console.log(datos.get('address'))
         console.log(datos.get('neighborhood'))
+        var username = datos.get('usernanme');
 
-        fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/owners/focus', {
+        fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/owners/Juan', {
             method: 'PUT',
             body: JSON.stringify({
                 email: datos.get('email'),
