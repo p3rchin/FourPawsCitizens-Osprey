@@ -112,24 +112,16 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <form class="main_form">
+                <form class="main_form" id="view-form">
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-
-                            <select class="form-control" style="height:60px" name="neighborhood">
-                                <option disabled="disabled" selected="selected">Select your parameter</option>
-                                <option value="Microchip">Microchip</option>
-                                <option value="Name">Name</option>
-                                <option value="Race">Race</option>
-                                <option value="Size">Size</option>
-                                <option value="Sex">Sex</option>
-                            </select>
+                            <h3 style="color: #0a0401">Information to filter</h3>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                             <input class="form-control" placeholder="Your text" type="text" name="tex">
                         </div>
                         <div class=" col-md-12">
-                            <button class="send">Filter</button>
+                            <button class="send" type="submit"> Filter</button>
                         </div>
                     </div>
                 </form>
@@ -140,11 +132,14 @@
 <table id="editionTbl" class="table table-dark table-striped table-bordered">
     <thead>
     <tr>
+        <th>Pet Id</th>
         <th>Microchip</th>
         <th>Name</th>
+        <th>Species</th>
         <th>Race</th>
         <th>Size</th>
         <th>Sex</th>
+        <th>Username</th>
     </tr>
     </thead>
     <tbody id="ownerTable">
@@ -197,14 +192,52 @@
     fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/pets/total')
         .then((response) => response.json())
         .then(data => mostrarData(data));
-    const mostrarData = (data) =>{
+    const mostrarData = (data) => {
         console.log(data);
         let body = ''
-        for(let i = 0; i<data.length; i++){
-            body+= '<tr>' + '<td>' + data[i].microchip + '</td>' + '<td>' +data[i].name + '</td>' + '<td>' + data[i].race + '</td>' + '<td>' +data[i].size + '</td>' + '<td>' +data[i].sex + '</td>' + '</tr>';
+        for (let i = 0; i < data.length; i++) {
+            body += '<tr>' + '<td>' + data[i].petId + '</td>' + '<td>' + data[i].microchip + '</td>' + '<td>' + data[i].name + '</td>' + '<td>' + data[i].species + '</td>' + '<td>' + data[i].race + '</td>' + '<td>' + data[i].size + '</td>' + '<td>' + data[i].sex + '</td>' + '<td>' + data[i].username + '</td>' + '</tr>';
         }
         document.getElementById('ownerTable').innerHTML = body;
     }
+
+    var formulario = document.getElementById('view-form');
+
+    formulario.addEventListener('submit', function (e) {
+        e.preventDefault();
+        console.log('me diste un click')
+
+        var datos = new FormData(formulario);
+
+        console.log(datos.get('tex'))
+        var text = datos.get('tex');
+
+        if(text == ""){
+            fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/pets/total')
+                .then((response) => response.json())
+                .then(data => mostrarData(data));
+            const mostrarData = (data) => {
+                console.log(data);
+                let body = ''
+                for (let i = 0; i < data.length; i++) {
+                    body += '<tr>' + '<td>' + data[i].petId + '</td>' + '<td>' + data[i].microchip + '</td>' + '<td>' + data[i].name + '</td>' + '<td>' + data[i].species + '</td>' + '<td>' + data[i].race + '</td>' + '<td>' + data[i].size + '</td>' + '<td>' + data[i].sex + '</td>' + '<td>' + data[i].username + '</td>' + '</tr>';
+                }
+                document.getElementById('ownerTable').innerHTML = body;
+            }
+        }else{
+            fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/pets/total?param=' + text)
+                .then((response) => response.json())
+                .then(data => mostrarData(data));
+            const mostrarData = (data) => {
+                console.log(data);
+                let body = ''
+                for (let i = 0; i < data.length; i++) {
+                    body += '<tr>' + '<td>' + data[i].petId + '</td>' + '<td>' + data[i].microchip + '</td>' + '<td>' + data[i].name + '</td>' + '<td>' + data[i].species + '</td>' + '<td>' + data[i].race + '</td>' + '<td>' + data[i].size + '</td>' + '<td>' + data[i].sex + '</td>' + '<td>' + data[i].username + '</td>' + '</tr>';
+                }
+                document.getElementById('ownerTable').innerHTML = body;
+            }
+        }
+    });
 </script>
 
 <script src="js/jquery.min.js"></script>

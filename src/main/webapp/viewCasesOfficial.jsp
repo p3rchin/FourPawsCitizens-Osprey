@@ -121,22 +121,16 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <form class="main_form">
+                <form class="main_form" id="view-form">
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-
-                            <select class="form-control" style="height:60px" name="neighborhood">
-                                <option disabled="disabled" selected="selected">Select your parameter</option>
-                                <option value="Microchip">Date</option>
-                                <option value="Name">Type</option>
-                                <option value="Race">Description</option>
-                            </select>
+                            <h3 style="color: #0a0401">Information to filter</h3>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                             <input class="form-control" placeholder="Your text" type="text" name="tex">
                         </div>
                         <div class=" col-md-12">
-                            <button class="send">Filter</button>
+                            <button class="send" type="submit"> Filter</button>
                         </div>
                     </div>
                 </form>
@@ -147,9 +141,11 @@
 <table id="editionTbl" class="table table-dark table-striped table-bordered">
     <thead>
     <tr>
+        <th>Case Id</th>
         <th>Date</th>
         <th>Type</th>
         <th>Description</th>
+        <th>Pet Id</th>
     </tr>
     </thead>
     <tbody id="petCasesTable">
@@ -206,10 +202,49 @@
         console.log(data);
         let body = ''
         for (let i = 0; i < data.length; i++) {
-            body += '<tr>' + '<td>' + data[i].createdAt + '</td>' + '<td>' + data[i].type + '</td>' + '<td>' + data[i].description + '</td>' + '</tr>';
+            body += '<tr>' + '<td>' + data[i].caseId + '</td>' + '<td>' + data[i].createdAt + '</td>' + '<td>' + data[i].type + '</td>' + '<td>' + data[i].description + '</td>' + '<td>' + data[i].petId + '</td>' + '</tr>';
         }
         document.getElementById('petCasesTable').innerHTML = body;
     }
+
+    var formulario = document.getElementById('view-form');
+
+    formulario.addEventListener('submit', function (e) {
+        e.preventDefault();
+        console.log('me diste un click')
+
+        var datos = new FormData(formulario);
+
+        console.log(datos.get('tex'))
+        var text = datos.get('tex');
+
+        if(text == ""){
+            fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/petcases/total')
+                .then((response) => response.json())
+                .then(data => mostrarData(data));
+            const mostrarData = (data) => {
+                console.log(data);
+                let body = ''
+                for (let i = 0; i < data.length; i++) {
+                    body += '<tr>' + '<td>' + data[i].caseId + '</td>' + '<td>' + data[i].createdAt + '</td>' + '<td>' + data[i].type + '</td>' + '<td>' + data[i].description + '</td>' + '<td>' + data[i].petId + '</td>' + '</tr>';
+                }
+                document.getElementById('petCasesTable').innerHTML = body;
+            }
+        }else{
+            fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/petcases/total?param=' + text)
+                .then((response) => response.json())
+                .then(data => mostrarData(data));
+            const mostrarData = (data) => {
+                console.log(data);
+                let body = ''
+                for (let i = 0; i < data.length; i++) {
+                    body += '<tr>' + '<td>' + data[i].caseId + '</td>' + '<td>' + data[i].createdAt + '</td>' + '<td>' + data[i].type + '</td>' + '<td>' + data[i].description + '</td>' + '<td>' + data[i].petId + '</td>' + '</tr>';
+                }
+                document.getElementById('petCasesTable').innerHTML = body;
+            }
+
+        }
+    });
 </script>
 
 <script src="js/jquery.min.js"></script>

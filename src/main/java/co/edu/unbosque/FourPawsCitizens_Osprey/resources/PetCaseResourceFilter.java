@@ -30,7 +30,7 @@ public class PetCaseResourceFilter {
 
         if (param != null) {
             for (int i = 0; i < petcases.size(); i++) {
-                if (param.equals(petcases.get(i).getCreatedAt()) || param.equals(petcases.get(i).getDescription()) || param.equals(petcases.get(i).getType()) || param.equals(petcases.get(i).getPetId()) || param.equals(petcases.get(i).getCaseId())) {
+                if (param.equals(petcases.get(i).getCreatedAt()) || param.equals(petcases.get(i).getDescription()) || param.equals(petcases.get(i).getType()) || param.equals(""+petcases.get(i).getPetId()) || param.equals(petcases.get(i).getCaseId())) {
                     petcasesParam.add(petcases.get(i));
                 }
             }
