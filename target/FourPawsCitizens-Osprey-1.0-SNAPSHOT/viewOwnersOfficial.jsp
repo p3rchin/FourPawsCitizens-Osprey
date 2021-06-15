@@ -1,11 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: fabic
-  Date: 13/06/2021
-  Time: 5:36
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>Pawn Citizens</title>
+    <title>Paws Citizens</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -82,7 +75,7 @@
                         <div class="limit-box">
                             <nav class="main-menu">
                                 <ul class="menu-area-main">
-                                    <li class="active" > <a href="homeOfficial.jsp">Home</a> </li>
+                                    <li > <a href="homeOfficial.jsp">Home</a> </li>
                                 </ul>
                             </nav>
                         </div>
@@ -96,104 +89,54 @@
         <!-- end header inner -->
 </header>
 <!-- end header -->
-<section class="slider_section">
-    <div id="main_slider" class="carousel slide banner-main" data-ride="carousel">
-
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="first-slide" src="images/banner9.jpg" alt="First slide">
-                <div class="container">
-                    <div class="carousel-caption relative">
-
-                        <h1>See<br> <strong class="black_bold"> total</strong><br>
-                            <strong class="yellow_bold">pets</strong></h1>
-                        <p>You can see total pets</p>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img class="second-slide" src="images/banner10.jpg" alt="Third slide">
-                <div class="container">
-                    <div class="carousel-caption relative">
-                        <h1>See<br> <strong class="black_bold"> total</strong><br>
-                            <strong class="yellow_bold">cases</strong></h1>
-                        <p>You can see total cases of pets</p>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img class="third-slide" src="images/banner11.jpg" alt="Second slide">
-                <div class="container">
-                    <div class="carousel-caption relative">
-                        <h1>See <br> <strong class="black_bold"> total</strong><br>
-                            <strong class="yellow_bold">visits</strong></h1>
-                        <p> You can see total cases of vets</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="next">
-            <i class='fa fa-angle-right'></i>
-        </a>
-        <a class="carousel-control-next" href="#main_slider" role="button" data-slide="prev">
-            <i class='fa fa-angle-left'></i>
-        </a>
-    </div>
-</section>
-
-<!-- service -->
-<div class="service">
+<div class="brand_color">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 offset-md-2">
-                <div class="title">
-                    <h2>List of <strong class="black">services</strong></h2>
-                    <span>Easy and effective way to get your service</span>
+            <div class="col-md-12">
+                <div class="titlepage">
+                    <h2>View information of owners</h2>
                 </div>
             </div>
         </div>
+    </div>
+
+</div>
+<div class="contact">
+    <div class="container">
         <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                <div class="service-box">
-                    <a href="viewPetsOfficial.jsp"><img src="icon/viewpetsofficial.png"/></a>
-                    <h3>Check pets</h3>
-                    <p>You can inspect and review each of the pets</p>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                <div class="service-box">
-                    <a href="viewCasesOfficial.jsp"><img src="icon/viewcasesofficial.png"/></a>
-                    <h3>Check cases</h3>
-                    <p>You can inspect and review each case</p>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                <div class="service-box">
-                    <a href="viewVisitsOfficial.jsp"><img src="icon/iconviewinformation.png"/></a>
-                    <h3>Check total visits</h3>
-                    <p> You can see all the information related to the visits</p>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                <div class="service-box">
-                    <a href="viewPetsOwner.jsp"><img src="icon/iconviewinformation.png"/></a>
-                    <h3>View total owners</h3>
-                    <p>You will have access to the information of owners</p>
-                </div>
+            <div class="col-md-12">
+                <form class="main_form" id="view-form">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                            <h3 style="color: #0a0401">Information to filter</h3>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                            <input class="form-control" placeholder="Your text" type="text" name="tex">
+                        </div>
+                        <div class=" col-md-12">
+                            <button class="send" type="submit"> Filter</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </div>
-<!-- end service -->
+<table id="editionTbl" class="table table-dark table-striped table-bordered">
+    <thead>
+    <tr>
+        <th>Username</th>
+        <th>Person ID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Neighborhood</th>
 
+    </tr>
+    </thead>
+    <tbody id="ownerTable">
+    </tbody>
+</table>
 
-<!-- map -->
-<div class="container-fluid padi">
-    <div class="map">
-        <img src="images/mapimg.jpg" alt="img"/>
-    </div>
-</div>
-<!-- end map -->
 <!--  footer -->
 
 <footr>
@@ -207,8 +150,8 @@
                         <h3>Contact us</h3>
                         <ul class="lik"></ul>
                         <span>Av. Cra. 9 No. 131 A - 02<br>
-                       Usaquén, Bogotá<br>
-                       PBX: (571) 648 9000</span>
+                      Usaquén, Bogotá<br>
+                      PBX: (571) 648 9000</span>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
@@ -216,6 +159,7 @@
                         <h3>ADDITIONAL LINKS</h3>
                         <ul class="lik">
                             <li> <a href="index.jsp">Home</a></li>
+                            <li> <a href="about.jsp">About</a></li>
                         </ul>
                     </div>
                 </div>
@@ -233,8 +177,60 @@
 
     </div>
 </footr>
-<!-- end footer -->
+
 <!-- Javascript files-->
+<script>
+    fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/pets/total')
+        .then((response) => response.json())
+        .then(data => mostrarData(data));
+    const mostrarData = (data) => {
+        console.log(data);
+        let body = ''
+        for (let i = 0; i < data.length; i++) {
+            body += '<tr>' + '<td>' + data[i].petId + '</td>' + '<td>' + data[i].microchip + '</td>' + '<td>' + data[i].name + '</td>' + '<td>' + data[i].species + '</td>' + '<td>' + data[i].race + '</td>' + '<td>' + data[i].size + '</td>' + '<td>' + data[i].sex + '</td>' + '<td>' + data[i].username + '</td>' + '</tr>';
+        }
+        document.getElementById('ownerTable').innerHTML = body;
+    }
+
+    var formulario = document.getElementById('view-form');
+
+    formulario.addEventListener('submit', function (e) {
+        e.preventDefault();
+        console.log('me diste un click')
+
+        var datos = new FormData(formulario);
+
+        console.log(datos.get('tex'))
+        var text = datos.get('tex');
+
+        if(text == ""){
+            fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/pets/total')
+                .then((response) => response.json())
+                .then(data => mostrarData(data));
+            const mostrarData = (data) => {
+                console.log(data);
+                let body = ''
+                for (let i = 0; i < data.length; i++) {
+                    body += '<tr>' + '<td>' + data[i].petId + '</td>' + '<td>' + data[i].microchip + '</td>' + '<td>' + data[i].name + '</td>' + '<td>' + data[i].species + '</td>' + '<td>' + data[i].race + '</td>' + '<td>' + data[i].size + '</td>' + '<td>' + data[i].sex + '</td>' + '<td>' + data[i].username + '</td>' + '</tr>';
+                }
+                document.getElementById('ownerTable').innerHTML = body;
+            }
+        }else{
+            fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/pets/total?param=' + text)
+                .then((response) => response.json())
+                .then(data => mostrarData(data));
+            const mostrarData = (data) => {
+                console.log(data);
+                let body = ''
+                for (let i = 0; i < data.length; i++) {
+                    body += '<tr>' + '<td>' + data[i].petId + '</td>' + '<td>' + data[i].microchip + '</td>' + '<td>' + data[i].name + '</td>' + '<td>' + data[i].species + '</td>' + '<td>' + data[i].race + '</td>' + '<td>' + data[i].size + '</td>' + '<td>' + data[i].sex + '</td>' + '<td>' + data[i].username + '</td>' + '</tr>';
+                }
+                document.getElementById('ownerTable').innerHTML = body;
+            }
+        }
+    });
+</script>
+
 <script src="js/jquery.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
