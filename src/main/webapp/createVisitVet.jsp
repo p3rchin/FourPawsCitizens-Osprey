@@ -218,11 +218,16 @@
 
     var datos = new FormData(formulario);
 
+    console.log(datos.get('username'))
+    console.log(datos.get('petId'))
     console.log(datos.get('created'))
     console.log(datos.get('type'))
     console.log(datos.get('description'))
+    alert("Your visit was booked")
+    var username = datos.get('username');
+    var petId = datos.get('petId');
 
-    fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/vets/rojitas&12/visits', {
+    fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/vets/' + username + '&' + petId + '/visits', {
       method: 'POST',
       body: JSON.stringify({
         created_at: datos.get('created'),

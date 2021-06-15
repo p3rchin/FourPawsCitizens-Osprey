@@ -11,7 +11,13 @@
   <component name="ChangeListManager">
     <list default="true" id="33576cdb-f9f2-49a4-a657-bfa9e15e0b2f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/VetsResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/resources/VetsResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/OwnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/OwnerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/VetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/FourPawsCitizens_Osprey/services/VetService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/createCaseOwner.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/createCaseOwner.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/createVisitVet.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/createVisitVet.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/registerOwner.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/registerOwner.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/updateInfoOwner.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/updateInfoOwner.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/updateInfoVet.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/updateInfoVet.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -261,6 +267,8 @@
       <workItem from="1623577778506" duration="1744000" />
       <workItem from="1623580533442" duration="707000" />
       <workItem from="1623609983593" duration="19365000" />
+      <workItem from="1623705339285" duration="228000" />
+      <workItem from="1623789310021" duration="3675000" />
     </task>
     <servers />
   </component>

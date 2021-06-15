@@ -239,17 +239,19 @@
 
         var datos = new FormData(formulario);
 
+        console.log(datos.get('username'))
+        console.log(datos.get('name'))
+        console.log(datos.get('address'))
+        console.log(datos.get('neighborhood'))
+        alert("Your information was updated")
+        var username = datos.get('username');
 
-        console.log(datos.get('created'))
-        console.log(datos.get('type'))
-        console.log(datos.get('description'))
-
-        fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/pets/12/petcases', {
-            method: 'POST',
+        fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/vets/' + username, {
+            method: 'PUT',
             body: JSON.stringify({
-                created_at: datos.get('created'),
-                type: datos.get('type'),
-                description:datos.get('description')
+                name: datos.get('name'),
+                address: datos.get('address'),
+                neighborhood: datos.get('neighborhood')
             }),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',

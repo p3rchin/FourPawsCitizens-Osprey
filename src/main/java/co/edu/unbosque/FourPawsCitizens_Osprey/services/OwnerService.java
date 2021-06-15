@@ -100,8 +100,10 @@ public class OwnerService {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
+        UserApp userApp = new UserAppService().Authorization(owner.getUsername());
+
         ownerRepository = new OwnerRepositoryImpl(entityManager);
-        ownerRepository.updateByUsername(username, owner.getPassword(), owner.getEmail(), owner.getPersonId(), owner.getName(), owner.getAddress(), owner.getNeighborhood());
+        ownerRepository.updateByUsername(username, userApp.getPassword(), userApp.getEmail(), owner.getPersonId(), owner.getName(), owner.getAddress(), owner.getNeighborhood());
 
         entityManager.close();
         entityManagerFactory.close();

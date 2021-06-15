@@ -227,9 +227,10 @@
         console.log(datos.get('id'))
         console.log(datos.get('address'))
         console.log(datos.get('neighborhood'))
-        var username = datos.get('usernanme');
+        alert("Your information was updated")
+        var username = datos.get('username');
 
-        fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/owners/Juan', {
+        fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/owners/'+ username, {
             method: 'PUT',
             body: JSON.stringify({
                 email: datos.get('email'),

@@ -25,6 +25,7 @@ public class VetsResource {
     public Response modify(@PathParam("username") String username, Vet vet) {
 
      VetService vetService = new VetService();
+
      vetService.updateVet(username,vet);
 
         return Response.ok()

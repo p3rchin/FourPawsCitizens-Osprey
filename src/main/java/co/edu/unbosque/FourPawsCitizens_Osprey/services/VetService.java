@@ -90,8 +90,10 @@ public class VetService {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OspreyDS");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
+        UserApp userApp = new UserAppService().Authorization(vet.getUsername());
+
         vetRepository = new VetRepositoryImpl(entityManager);
-        vetRepository.updateByUsername(username, vet.getPassword(), vet.getEmail(), vet.getName(), vet.getAddress(), vet.getNeighborhood());
+        vetRepository.updateByUsername(username, userApp.getPassword(), userApp.getEmail(), vet.getName(), vet.getAddress(), vet.getNeighborhood());
 
         entityManager.close();
         entityManagerFactory.close();
