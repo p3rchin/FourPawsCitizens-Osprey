@@ -118,11 +118,11 @@
                     <form class="main_form" class="register-form" id="register-form">
                         <div class="row">
                             <div class=" col-md-12">
-                                <input type="text" class="form-control" name="petId" id="petId" placeholder="Your petId"
+                                <input type="text" class="form-control" name="petId" id="petId" placeholder="Your pet ID"
                                        required="required"/>
                             </div>
                             <div class=" col-md-12">
-                                <input class="form-control" type="text" placeholder="Created" name="created"
+                                <input class="form-control" type="text" placeholder="Date" name="created"
                                        id="created">
                             </div>
                             <div class=" col-md-12">
@@ -141,8 +141,7 @@
         </div>
     </div>
 </div>
->
-<!--  footer -->
+
 
 <footr>
     <div class="footer">

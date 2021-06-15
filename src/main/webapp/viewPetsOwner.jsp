@@ -101,7 +101,36 @@
         </div>
 
     </div>
-    
+      <div class="contact">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-12">
+                      <form class="main_form">
+                          <div class="row">
+                              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+
+                                  <select class="form-control" style="height:60px" name="neighborhood">
+                                      <option disabled="disabled" selected="selected">Select your parameter</option>
+                                      <option value="Microchip">Microchip</option>
+                                      <option value="Name">Name</option>
+                                      <option value="Race">Race</option>
+                                      <option value="Size">Size</option>
+                                      <option value="Sex">Sex</option>
+                                  </select>
+                              </div>
+                              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                  <input class="form-control" placeholder="Your text" type="text" name="tex">
+                              </div>
+                              <div class=" col-md-12">
+                                  <button class="send">Filter</button>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+
                   <table id="editionTbl" class="table table-dark table-striped table-bordered">
                      <thead>
                      <tr>
@@ -115,7 +144,7 @@
                      <tbody id="ownerTable">
                      </tbody>
                   </table>
-        
+
       <!--  footer --> 
 
       <footr>

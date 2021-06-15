@@ -121,10 +121,10 @@
                 <input type="text" class="form-control" name="username" id="username" placeholder="Your username" required="required"/>
               </div>
               <div class=" col-md-12">
-                <input type="text" class="form-control" name="petId" id="petId" placeholder="Your petId" required="required"/>
+                <input type="text" class="form-control" name="petId" id="petId" placeholder="Your pet ID" required="required"/>
               </div>
               <div class=" col-md-12">
-                <input class="form-control" type="text" placeholder="Created" name="created" id="created">
+                <input class="form-control" type="text" placeholder="Date" name="created" id="created">
               </div>
               <div class=" col-md-12">
                 <input class="form-control" placeholder="Type" type="text" name="type" id="type">
@@ -140,7 +140,7 @@
       </dir>
     </div>
   </div>
-</div>>
+</div>
 <!--  footer -->
 
 <footr>

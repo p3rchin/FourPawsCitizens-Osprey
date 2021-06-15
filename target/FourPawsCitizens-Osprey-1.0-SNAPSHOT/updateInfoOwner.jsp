@@ -168,8 +168,7 @@
             </dir>
         </div>
     </div>
-</div>>
-<!--  footer -->
+</div>
 
 <footr>
     <div class="footer">
@@ -210,7 +209,6 @@
 </footr>
 
 <!-- Javascript files-->
-
 <script>
 
     var formulario = document.getElementById('register-form');
