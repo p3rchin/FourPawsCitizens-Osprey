@@ -3,7 +3,7 @@
 Developed by Santiago Acevedo, Ricardo Cuevas, Fabián Gómez y Santiago Porras
 
 ## Link del video: 
-https://youtu.be/76uhJYdSrhc
+https://youtu.be/vvfRoZyUIsY
 
 ### AVISO :
 - En el front end por cuestion de incompatibilidad de estilos con los select, las listas se duplican pero no conlleva a ningun error.
