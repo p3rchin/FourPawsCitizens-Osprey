@@ -176,7 +176,7 @@
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                 <div class="service-box">
-                    <a href="viewPetsOwner.jsp"><img src="icon/iconviewinformation.png"/></a>
+                    <a href="viewOwnersOfficial.jsp"><img src="icon/iconcreatecase.png"/></a>
                     <h3>View total owners</h3>
                     <p>You will have access to the information of owners</p>
                 </div>

@@ -20,12 +20,13 @@
     <!-- Responsive-->
     <link rel="stylesheet" href="css/responsive.css">
     <!-- fevicon -->
-    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <link rel="icon" href="images/fevicon.png" type="image/gif"/>
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
     <!-- Tweaks for older IEs-->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+          media="screen">
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -34,7 +35,7 @@
 <body class="main-layout">
 <!-- loader  -->
 <div class="loader_bg">
-    <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+    <div class="loader"><img src="images/loading.gif" alt="#"/></div>
 </div>
 <!-- end loader -->
 <!-- header -->
@@ -47,10 +48,10 @@
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                         <div class="top-box">
                             <ul class="sociel_link">
-                                <li> <a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                                <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
-                                <li> <a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -66,7 +67,8 @@
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
                     <div class="full">
                         <div class="center-desk">
-                            <div class="logo"> <a href="homeOfficial.jsp"><img src="images/logo.png" alt="logo"/></a> </div>
+                            <div class="logo"><a href="homeOfficial.jsp"><img src="images/logo.png" alt="logo"/></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -75,7 +77,7 @@
                         <div class="limit-box">
                             <nav class="main-menu">
                                 <ul class="menu-area-main">
-                                    <li > <a href="homeOfficial.jsp">Home</a> </li>
+                                    <li><a href="homeOfficial.jsp">Home</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -158,8 +160,8 @@
                     <div class="contact">
                         <h3>ADDITIONAL LINKS</h3>
                         <ul class="lik">
-                            <li> <a href="index.jsp">Home</a></li>
-                            <li> <a href="about.jsp">About</a></li>
+                            <li><a href="index.jsp">Home</a></li>
+                            <li><a href="about.jsp">About</a></li>
                         </ul>
                     </div>
                 </div>
@@ -180,14 +182,14 @@
 
 <!-- Javascript files-->
 <script>
-    fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/pets/total')
+    fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/owners/total')
         .then((response) => response.json())
         .then(data => mostrarData(data));
     const mostrarData = (data) => {
         console.log(data);
         let body = ''
         for (let i = 0; i < data.length; i++) {
-            body += '<tr>' + '<td>' + data[i].petId + '</td>' + '<td>' + data[i].microchip + '</td>' + '<td>' + data[i].name + '</td>' + '<td>' + data[i].species + '</td>' + '<td>' + data[i].race + '</td>' + '<td>' + data[i].size + '</td>' + '<td>' + data[i].sex + '</td>' + '<td>' + data[i].username + '</td>' + '</tr>';
+            body += '<tr>' + '<td>' + data[i].username + '</td>' + '<td>' + data[i].personId + '</td>' + '<td>' + data[i].name + '</td>' + '<td>' + data[i].address + '</td>' + '<td>' + data[i].neighborhood + '</td>' + '</tr>';
         }
         document.getElementById('ownerTable').innerHTML = body;
     }
@@ -203,27 +205,27 @@
         console.log(datos.get('tex'))
         var text = datos.get('tex');
 
-        if(text == ""){
-            fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/pets/total')
+        if (text == "") {
+            fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/owners/total')
                 .then((response) => response.json())
                 .then(data => mostrarData(data));
             const mostrarData = (data) => {
                 console.log(data);
                 let body = ''
                 for (let i = 0; i < data.length; i++) {
-                    body += '<tr>' + '<td>' + data[i].petId + '</td>' + '<td>' + data[i].microchip + '</td>' + '<td>' + data[i].name + '</td>' + '<td>' + data[i].species + '</td>' + '<td>' + data[i].race + '</td>' + '<td>' + data[i].size + '</td>' + '<td>' + data[i].sex + '</td>' + '<td>' + data[i].username + '</td>' + '</tr>';
+                    body += '<tr>' + '<td>' + data[i].username + '</td>' + '<td>' + data[i].personId + '</td>' + '<td>' + data[i].name + '</td>' + '<td>' + data[i].address + '</td>' + '<td>' + data[i].neighborhood + '</td>' + '</tr>';
                 }
                 document.getElementById('ownerTable').innerHTML = body;
             }
-        }else{
-            fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/pets/total?param=' + text)
+        } else {
+            fetch('http://localhost:8080/FourPawsCitizens-Osprey-1.0-SNAPSHOT/api/owners/total?param=' + text)
                 .then((response) => response.json())
                 .then(data => mostrarData(data));
             const mostrarData = (data) => {
                 console.log(data);
                 let body = ''
                 for (let i = 0; i < data.length; i++) {
-                    body += '<tr>' + '<td>' + data[i].petId + '</td>' + '<td>' + data[i].microchip + '</td>' + '<td>' + data[i].name + '</td>' + '<td>' + data[i].species + '</td>' + '<td>' + data[i].race + '</td>' + '<td>' + data[i].size + '</td>' + '<td>' + data[i].sex + '</td>' + '<td>' + data[i].username + '</td>' + '</tr>';
+                    body += '<tr>' + '<td>' + data[i].username + '</td>' + '<td>' + data[i].personId + '</td>' + '<td>' + data[i].name + '</td>' + '<td>' + data[i].address + '</td>' + '<td>' + data[i].neighborhood + '</td>' + '</tr>';
                 }
                 document.getElementById('ownerTable').innerHTML = body;
             }
@@ -241,16 +243,16 @@
 <script src="js/custom.js"></script>
 <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
         $(".fancybox").fancybox({
             openEffect: "none",
             closeEffect: "none"
         });
 
-        $(".zoom").hover(function(){
+        $(".zoom").hover(function () {
 
             $(this).addClass('transition');
-        }, function(){
+        }, function () {
 
             $(this).removeClass('transition');
         });
